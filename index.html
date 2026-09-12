@@ -1,3 +1,8 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mommy Di Visa Assistance Center</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Source+Sans+3:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap');
@@ -48,7 +53,10 @@
   }
 
   *{box-sizing:border-box;}
-  html{-webkit-text-size-adjust:100%;}
+  html{-webkit-text-size-adjust:100%; scroll-behavior:smooth;}
+  #pricing, #reviews, #why-assistance, #checklist, #process, #faq{
+    scroll-margin-top:20px;
+  }
   body{
     margin:0;
     background:var(--bg);
@@ -118,6 +126,56 @@
     text-transform:uppercase;
     color:var(--ink-soft);
   }
+  .nav-links{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.68rem;
+    letter-spacing:.03em;
+    text-transform:uppercase;
+  }
+  .nav-links a{
+    color:var(--primary);
+    text-decoration:none;
+    white-space:nowrap;
+    padding:7px 14px;
+    border-radius:999px;
+    border:1.5px solid var(--border);
+    background:var(--surface-2);
+    transition:background .15s ease, color .15s ease, border-color .15s ease, transform .15s ease;
+  }
+  .nav-links a:hover{
+    background:var(--accent);
+    border-color:var(--accent);
+    color:var(--accent-ink);
+    transform:translateY(-1px);
+  }
+  .topbar-contact{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-end;
+    gap:2px;
+    font-size:0.78rem;
+    color:var(--ink-soft);
+    text-align:right;
+  }
+  .topbar-contact .contact-label{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.62rem;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--accent);
+    font-weight:600;
+  }
+  .topbar-contact a{
+    color:var(--ink-soft);
+    text-decoration:none;
+  }
+  .topbar-contact a:hover{color:var(--accent);}
+  @media (max-width:560px){
+    .topbar-contact{align-items:flex-start; text-align:left;}
+  }
   .btn{
     display:inline-flex;
     align-items:center;
@@ -144,6 +202,7 @@
     box-shadow:none;
   }
   .btn-block{width:100%; justify-content:center; margin-top:4px;}
+  .btn-lg{padding:15px 28px; font-size:1.05rem; border-radius:999px;}
   .btn:disabled{opacity:0.45; cursor:not-allowed; box-shadow:none; transform:none;}
   .btn-fb{
     background:#1877F2;
@@ -192,6 +251,53 @@
     gap:14px;
     flex-wrap:wrap;
   }
+
+  /* ---------- next available slot ---------- */
+  .next-slot{padding-block:6px 20px;}
+  .next-slot-card{
+    background:transparent;
+    border:none;
+    box-shadow:none;
+    padding:0;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+    gap:14px;
+  }
+  .next-slot-badge{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:6px;
+  }
+  .next-slot-label{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.72rem;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--accent);
+    font-weight:600;
+    max-width:44ch;
+  }
+  .next-slot-date{
+    font-family:'Playfair Display',serif;
+    font-weight:700;
+    font-size:1.55rem;
+    color:var(--primary);
+  }
+  .next-slot-tip{
+    margin:0;
+    font-size:0.85rem;
+    color:var(--ink-soft);
+    background:var(--surface-2);
+    border-left:3px solid var(--gold);
+    border-radius:8px;
+    padding:10px 16px;
+    max-width:58ch;
+    text-align:left;
+  }
+  .next-slot-cta-wrap{margin-top:2px; text-align:center;}
 
   /* ---------- sections ---------- */
   section{padding-block:44px;}
@@ -242,6 +348,34 @@
   }
   .reason-card h3{font-size:1.05rem;}
   .reason-card p{margin:0; color:var(--ink-soft); font-size:0.9rem;}
+
+  .why-compact{padding-block:24px;}
+  .why-compact .section-head{margin-bottom:16px;}
+  .reason-list{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:16px;
+    overflow:hidden;
+  }
+  .reason-row{
+    display:grid;
+    grid-template-columns:30px 1fr;
+    gap:12px;
+    align-items:start;
+    padding:12px 18px;
+  }
+  .reason-row:not(:last-child){border-bottom:1px solid var(--border);}
+  .reason-icon-sm{
+    width:30px; height:30px;
+    border-radius:50%;
+    background:var(--surface-2);
+    color:var(--accent);
+    display:flex; align-items:center; justify-content:center;
+    flex:none;
+    margin-top:1px;
+  }
+  .reason-row strong{display:block; font-size:0.92rem; margin-bottom:2px;}
+  .reason-row span{color:var(--ink-soft); font-size:0.84rem;}
   .reason-cta{
     margin-top:34px;
     display:flex;
@@ -330,6 +464,7 @@
   .review-name{display:block; font-weight:600; font-size:0.94rem;}
   .review-meta{display:block; font-size:0.76rem; color:var(--ink-soft);}
   .review-quote{margin:0; color:var(--ink-soft); font-size:0.9rem; line-height:1.6;}
+  .review-stars{color:var(--gold); font-size:0.9rem; letter-spacing:2px; margin:8px 0 2px;}
   .review-note{display:block; margin-top:8px; font-size:0.78rem; color:var(--gold); font-style:italic;}
 
   /* pricing */
@@ -631,7 +766,14 @@
   .proof-box{margin-top:18px; background:var(--surface-2); border-radius:12px; padding:16px;}
   .proof-box h4{margin:0 0 6px; font-size:0.95rem; font-family:'Playfair Display',serif;}
   .proof-box p{margin:0 0 12px; font-size:0.88rem; color:var(--ink-soft);}
-  .proof-links{display:flex; flex-direction:column; gap:8px;}
+  .proof-links{display:flex; flex-direction:column; gap:4px;}
+  .proof-number{
+    margin:0;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.9rem;
+    font-weight:600;
+    color:var(--primary);
+  }
   .confirm-row{
     display:flex; align-items:flex-start; gap:10px;
     margin-top:20px; font-size:0.9rem; cursor:pointer;
@@ -728,6 +870,8 @@
     .step{grid-template-columns:40px 1fr;}
   }
 </style>
+</head>
+<body>
 
 <header class="topbar">
   <div class="wrap">
@@ -735,7 +879,20 @@
       <div class="stamp">MD</div>
       <div class="brand-name">Mommy Di Visa Assistance Center<span>US B1/B2 Tourist Visa</span></div>
     </div>
-    <button type="button" class="btn" onclick="openPayment()">Book a Strategy Call</button>
+    <nav class="nav-links">
+      <a href="#pricing">See Rates</a>
+      <a href="#reviews">See Reviews</a>
+      <a href="#why-assistance">Why Applicants Ask for Help</a>
+      <a href="#checklist">What to Prepare</a>
+      <a href="#process">Process</a>
+      <a href="#faq">FAQs</a>
+    </nav>
+    <div class="topbar-contact">
+      <span class="contact-label">Contact Us</span>
+      <a href="sms:09175663287">SMS: 0917 566 3287</a>
+      <a href="sms:09692061498">0969 206 1498</a>
+      <a href="mailto:travel.igotyou@gmail.com">travel.igotyou@gmail.com</a>
+    </div>
   </div>
 </header>
 
@@ -751,42 +908,60 @@
     </div>
   </section>
 
-  <section id="why-assistance">
+  <section class="next-slot">
+    <div class="next-slot-card">
+      <div class="next-slot-badge">
+        <span class="next-slot-label">Currently Accepting New B1/B2 (US Tourist Visa) Full Package Clients For</span>
+        <span class="next-slot-date">Thu, Nov 5, 2026</span>
+      </div>
+      <p class="next-slot-tip">📌 Good to know: US Embassy interview slots typically open up about 1 to 1.5 months after your DS-160 form submission and visa fee payment — so booking your strategy call now still leaves comfortable room to schedule your embassy interview afterward.</p>
+    </div>
+    <div class="next-slot-cta-wrap">
+      <button type="button" class="btn btn-lg" onclick="openPayment()">Book a Strategy Call</button>
+    </div>
+  </section>
+
+  <section id="why-assistance" class="why-compact">
     <div class="section-head">
       <span class="eyebrow">Why Get Assistance</span>
       <h2>Why applicants choose to have help with their US visa</h2>
-      <p>Your interview lasts just a few minutes — how you prepare for it is what actually makes the difference.</p>
     </div>
-    <div class="reason-grid">
-      <div class="reason-card">
-        <div class="reason-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4"/><path d="M9.5 14.5l2 2 4-4.5"/></svg></div>
-        <h3>Fewer Costly Mistakes</h3>
-        <p>A single unclear or inconsistent answer on your DS-160 can raise questions you didn't need to raise. A trained second pair of eyes catches this before you submit.</p>
+    <div class="reason-list">
+      <div class="reason-row">
+        <span class="reason-icon-sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4"/><path d="M9.5 14.5l2 2 4-4.5"/></svg></span>
+        <div><strong>Fewer Costly Mistakes</strong><span>A trained second pair of eyes catches unclear or inconsistent DS-160 answers before you submit.</span></div>
       </div>
-      <div class="reason-card">
-        <div class="reason-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><path d="M4 5h16v11H9l-4 4z"/></svg></div>
-        <h3>A Narrative That Holds Up</h3>
-        <p>Your purpose of travel and ties to the Philippines need to come across clearly in just a few minutes. We help you shape that story and say it with confidence.</p>
+      <div class="reason-row">
+        <span class="reason-icon-sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M4 5h16v11H9l-4 4z"/></svg></span>
+        <div><strong>A Narrative That Holds Up</strong><span>We help you shape your purpose of travel and ties to the Philippines into a clear, confident story.</span></div>
       </div>
-      <div class="reason-card">
-        <div class="reason-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0"/><path d="M12 18v3"/><path d="M9 21h6"/></svg></div>
-        <h3>Real Interview Practice</h3>
-        <p>A one-on-one mock interview with a script means you're not answering the hard questions for the first time on the actual day.</p>
+      <div class="reason-row">
+        <span class="reason-icon-sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0"/><path d="M12 18v3"/><path d="M9 21h6"/></svg></span>
+        <div><strong>Real Interview Practice</strong><span>A one-on-one mock interview with a script means no hard question catches you off guard.</span></div>
       </div>
-      <div class="reason-card">
-        <div class="reason-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><path d="M12 21s-7-6.5-7-11a7 7 0 0 1 14 0c0 4.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
-        <h3>Guided, Start to Finish</h3>
-        <p>From your DS-160 to biometrics and interview scheduling, you always know what comes next instead of piecing it together on your own.</p>
+      <div class="reason-row">
+        <span class="reason-icon-sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M12 21s-7-6.5-7-11a7 7 0 0 1 14 0c0 4.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+        <div><strong>Guided, Start to Finish</strong><span>From DS-160 to biometrics and interview scheduling, you always know what comes next.</span></div>
       </div>
-      <div class="reason-card">
-        <div class="reason-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><path d="M20 12a8 8 0 1 1-2.34-5.66"/><path d="M20 4v5h-5"/></svg></div>
-        <h3>A Second Chance, Done Right</h3>
-        <p>If you've been refused before, we review what likely went wrong and help you rebuild a stronger, better-prepared application.</p>
+      <div class="reason-row">
+        <span class="reason-icon-sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M20 12a8 8 0 1 1-2.34-5.66"/><path d="M20 4v5h-5"/></svg></span>
+        <div><strong>A Second Chance, Done Right</strong><span>If you've been refused before, we help you rebuild a stronger, better-prepared application.</span></div>
       </div>
     </div>
-    <div class="reason-cta">
-      <p>Ready to get started?</p>
-      <a class="btn" href="#pricing">See My Packages &amp; Rates</a>
+  </section>
+
+  <section id="checklist">
+    <div class="section-head">
+      <span class="eyebrow">Preparation</span>
+      <h2>What to have ready</h2>
+      <p>General guidance for a B1/B2 application — your case manager will confirm exactly what applies to you.</p>
+    </div>
+    <div class="checklist">
+      <ul>
+        <li><span class="checkbox"></span><span>Valid passport, with at least 6 months' validity beyond your intended travel</span></li>
+        <li><span class="checkbox"></span><span>Previous passport(s), if you've traveled internationally before</span></li>
+        <li><span class="checkbox"></span><span>2x2 photo meeting DS-160 photo requirements</span></li>
+      </ul>
     </div>
   </section>
 
@@ -832,6 +1007,7 @@
             <span class="review-meta">recommends Mommy Di Visa Assistance Center</span>
           </div>
         </div>
+        <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
         <p class="review-quote">"Mommy Di and her team are one of the best. They helped us from start to finish, answered all our questions, and did their best to help us present our profiles in the smoothest way possible. For someone like me who spent 8 years overthinking and too scared to apply, I'm so glad I finally took the leap." <span class="review-note">— husband and mother both approved, 10-year visas</span></p>
       </div>
       <div class="review-card">
@@ -842,6 +1018,7 @@
             <span class="review-meta">recommends Mommy Di Visa Assistance Center</span>
           </div>
         </div>
+        <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
         <p class="review-quote">"Their services are top-notch & highly recommended! My utmost thank you to Mommy Di & her team for paving the way for my F-1 visa application after last year's denial — from completing my DS-160 to conducting a mock interview." <span class="review-note">— F-1 student visa, after a prior denial</span></p>
       </div>
       <div class="review-card">
@@ -849,9 +1026,10 @@
           <span class="review-avatar">JD</span>
           <div>
             <span class="review-name">Jessica Ding</span>
-            <span class="review-meta">★★★★★ recommends Mommy Di Visa Assistance Center</span>
+            <span class="review-meta">recommends Mommy Di Visa Assistance Center</span>
           </div>
         </div>
+        <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
         <p class="review-quote">"From the beginning until the approval of our visa, they guided us every step of the way. They were very responsive, professional, and always willing to answer my questions, which made the whole process much less stressful."</p>
       </div>
       <div class="review-card">
@@ -862,6 +1040,7 @@
             <span class="review-meta">recommends Mommy Di Visa Assistance Center</span>
           </div>
         </div>
+        <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
         <p class="review-quote">"Everything from day 1 to the interview went smoothly with their assistance. I didn't have to stress about anything because they handle every detail of the application. Mommy Di is also respectful and understanding with my circumstances."</p>
       </div>
       <div class="review-card">
@@ -872,6 +1051,7 @@
             <span class="review-meta">recommends Mommy Di Visa Assistance Center</span>
           </div>
         </div>
+        <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
         <p class="review-quote">"From assisting me with the application forms to conducting mock interviews, they were very hands-on, patient and thorough. Their dedication made everything smooth and less stressful, and I felt well-prepared every step of the way."</p>
       </div>
       <div class="review-card">
@@ -882,6 +1062,7 @@
             <span class="review-meta">recommends Mommy Di Visa Assistance Center</span>
           </div>
         </div>
+        <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
         <p class="review-quote">"We just got our US visa approval and we couldn't have done it without their expert guidance. They made the entire process seamless and stress-free for our family. If you want a smooth and reliable experience, this is the team to trust."</p>
       </div>
       <div class="review-card">
@@ -892,6 +1073,7 @@
             <span class="review-meta">recommends Mommy Di Visa Assistance Center</span>
           </div>
         </div>
+        <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
         <p class="review-quote">"Highly recommended! The team was very helpful, responsive, and professional throughout my US visa application process. They guided me every step of the way, and I'm happy to say my visa was approved."</p>
       </div>
       <div class="review-card">
@@ -902,6 +1084,7 @@
             <span class="review-meta">recommends Mommy Di Visa Assistance Center</span>
           </div>
         </div>
+        <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
         <p class="review-quote">"Excellent service! The team was professional, highly responsive, and exceeded my expectations. They made a complicated process feel simple and stress-free. Highly recommended for anyone needing visa assistance!"</p>
       </div>
       <div class="review-card">
@@ -912,6 +1095,7 @@
             <span class="review-meta">recommends Mommy Di Visa Assistance Center</span>
           </div>
         </div>
+        <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
         <p class="review-quote">"So thankful for Mommy Di and her Team! I got approved ❤️"</p>
       </div>
     </div>
@@ -1018,22 +1202,6 @@
         <div class="step-num">6</div>
         <div><h3>Interview day</h3><p>You walk in prepared and confident — with ongoing consultation from us along the way.</p></div>
       </div>
-    </div>
-  </section>
-
-  <section id="checklist">
-    <div class="section-head">
-      <span class="eyebrow">Preparation</span>
-      <h2>What to have ready</h2>
-      <p>General guidance for a B1/B2 application — your case manager will confirm exactly what applies to you.</p>
-    </div>
-    <div class="checklist">
-      <ul>
-        <li><span class="checkbox"></span><span>Valid passport, with at least 6 months' validity beyond your intended travel</span></li>
-        <li><span class="checkbox"></span><span>Previous passport(s), if you've traveled internationally before</span></li>
-        <li><span class="checkbox"></span><span>Purpose-of-travel details, if applicable (invitation, event, itinerary)</span></li>
-        <li><span class="checkbox"></span><span>2x2 photo meeting DS-160 photo requirements</span></li>
-      </ul>
     </div>
   </section>
 
@@ -1251,50 +1419,65 @@
         </div>
       </div>
 
-      <div class="proof-box">
-        <h4>Attach Your Payment Screenshot</h4>
-        <p>Upload a screenshot of your GCash or Union Bank payment confirmation for total paid (<strong id="proofTotal">₱5,290</strong>).</p>
-        <label class="file-drop" id="fileDrop" for="paymentProof">
-          <span class="file-drop-label" id="proofFileLabel">No screenshot attached yet</span>
-          <span class="file-drop-btn">Choose Screenshot</span>
-          <input type="file" id="paymentProof" accept="image/*" onchange="handleProofUpload(event)">
-        </label>
-        <p class="proof-confirm" id="proofConfirmMsg" hidden>✓ Screenshot attached</p>
-      </div>
+      <form id="bookingForm" action="https://formsubmit.co/travel.igotyou@gmail.com" method="POST" enctype="multipart/form-data">
+        <input type="hidden" name="_subject" id="fsSubject" value="New Booking Submission">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_next" value="https://mommydi-visa-site.vercel.app/?booked=1">
+        <input type="hidden" name="_autoresponse" id="fsAutoresponse" value="">
+        <input type="hidden" name="Main Applicant Name" id="fsMainName">
+        <input type="hidden" name="Target Travel Date" id="fsTravelDate">
+        <input type="hidden" name="Package" id="fsPackage">
+        <input type="hidden" name="Adult Applicants" id="fsAdults">
+        <input type="hidden" name="Minors Below 18" id="fsMinors">
+        <input type="hidden" name="Adults Previously Refused" id="fsRefused">
+        <input type="hidden" name="Total Quote" id="fsTotal">
 
-      <label class="form-field" style="margin-top:18px;">
-        <span class="field-label">Full Names of All Applicants *</span>
-        <textarea id="allApplicantNames" rows="2" placeholder="e.g. Juan Dela Cruz, Maria Dela Cruz, Jose Dela Cruz Jr." oninput="clearStep3Error()"></textarea>
-      </label>
-      <p class="field-hint">Please list the full legal name of every applicant included in this quote — adults and minors.</p>
-
-      <div class="form-grid" style="margin-top:18px;">
-        <label class="form-field">
-          <span class="field-label">Viber / WhatsApp Number *</span>
-          <input type="text" id="clientContact" placeholder="0949 325 9411" oninput="clearStep3Error()">
-        </label>
-        <label class="form-field">
-          <span class="field-label">Email Address *</span>
-          <input type="email" id="clientEmail" placeholder="you@email.com" oninput="clearStep3Error()">
-        </label>
-      </div>
-
-      <div class="proof-box">
-        <h4>As a Backup, Also Message Us Your Proof</h4>
-        <p>Clicking "Continue" below will automatically email your submitted details and screenshot to our team (and to you too, if you gave your email above). As a backup in case that doesn't go through, please also send your screenshot, name, and target travel date via Viber or WhatsApp:</p>
-        <div class="proof-links">
-          <a class="btn btn-ghost btn-block" href="viber://chat?number=%2B639493259411">Message via Viber · +63 949 325 9411</a>
-          <a class="btn btn-ghost btn-block" href="https://wa.me/639493259411">Message via WhatsApp · +63 949 325 9411</a>
+        <div class="proof-box">
+          <h4>Attach Your Payment Screenshot</h4>
+          <p>Upload a screenshot of your GCash or Union Bank payment confirmation for total paid (<strong id="proofTotal">₱5,290</strong>).</p>
+          <label class="file-drop" id="fileDrop" for="paymentProof">
+            <span class="file-drop-label" id="proofFileLabel">No screenshot attached yet</span>
+            <span class="file-drop-btn">Choose Screenshot</span>
+            <input type="file" id="paymentProof" name="Payment Screenshot" accept="image/*" onchange="handleProofUpload(event)">
+          </label>
+          <p class="proof-confirm" id="proofConfirmMsg" hidden>✓ Screenshot attached</p>
         </div>
-      </div>
 
-      <p class="avail-note">Once your payment and booked schedule are confirmed, we'll send your confirmation via Viber/WhatsApp. Please book only 1 call slot per family / application group.</p>
-      <p class="form-error" id="step3Error" hidden></p>
+        <label class="form-field" style="margin-top:18px;">
+          <span class="field-label">Full Names of All Applicants *</span>
+          <textarea id="allApplicantNames" name="Full Names of All Applicants" rows="2" placeholder="e.g. Juan Dela Cruz, Maria Dela Cruz, Jose Dela Cruz Jr." oninput="clearStep3Error()"></textarea>
+        </label>
+        <p class="field-hint">Please list the full legal name of every applicant included in this quote — adults and minors.</p>
 
-      <div class="modal-actions">
-        <button type="button" class="btn btn-ghost" onclick="showStep(2)">Back</button>
-        <button type="button" id="continueBtn" class="btn" onclick="attemptContinue()">Continue to Book</button>
-      </div>
+        <div class="form-grid" style="margin-top:18px;">
+          <label class="form-field">
+            <span class="field-label">Viber / WhatsApp Number *</span>
+            <input type="text" id="clientContact" name="Viber/WhatsApp Number" placeholder="0949 325 9411" oninput="clearStep3Error()">
+          </label>
+          <label class="form-field">
+            <span class="field-label">Email Address *</span>
+            <input type="email" id="clientEmail" name="email" placeholder="you@email.com" oninput="clearStep3Error()">
+          </label>
+        </div>
+
+        <div class="proof-box">
+          <h4>As a Backup, Also Message Us Your Proof</h4>
+          <p>Clicking "Continue" below will automatically email your submitted details and screenshot to our team (and to you too, if you gave your email above). As a backup in case that doesn't go through, please also send your screenshot, name, and target travel date via Viber or WhatsApp:</p>
+          <div class="proof-links">
+            <p class="proof-number">Viber: +63 949 325 9411</p>
+            <p class="proof-number">WhatsApp: +63 949 325 9411</p>
+          </div>
+        </div>
+
+        <p class="avail-note">Once your payment and booked schedule are confirmed, we'll send your confirmation via Viber/WhatsApp. Please book only 1 call slot per family / application group.</p>
+        <p class="form-error" id="step3Error" hidden></p>
+
+        <div class="modal-actions">
+          <button type="button" class="btn btn-ghost" onclick="showStep(2)">Back</button>
+          <button type="submit" id="continueBtn" class="btn">Continue to Book</button>
+        </div>
+      </form>
     </div>
 
     <!-- STEP 4: Book on Calendly -->
@@ -1315,6 +1498,22 @@
 </dialog>
 
 <script>
+  // Make sure the top nav links (See Rates, See Reviews, etc.) always
+  // scroll to their section, even if plain "#anchor" jumps get blocked
+  // by the preview/viewer this page is opened in.
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+      link.addEventListener('click', function (e) {
+        var id = link.getAttribute('href').slice(1);
+        var target = id ? document.getElementById(id) : null;
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  });
+
   var PACKAGE_RATES = { new: 5290, reapp: 5690, coach: 3500 };
   var PACKAGE_LABELS = { new: 'New Application', reapp: 'Reapplication', coach: 'Coaching Only' };
   var MINOR_RATE = 3000;
@@ -1540,7 +1739,17 @@
     if (errEl) errEl.hidden = true;
   }
 
-  function attemptContinue() {
+  // Validates Step 3, then lets the form's real submission go through to
+  // FormSubmit (formsubmit.co) — a free form-to-email relay that needs no
+  // backend/server of our own. A genuine browser form submission (rather
+  // than a background fetch) is what reliably includes the attached payment
+  // screenshot as a real email attachment. FormSubmit then redirects back to
+  // this site (see the "_next" hidden field) with ?booked=1, which reopens
+  // this dialog straight to the confirmation step below.
+  // NOTE: the FIRST submission ever sent to a target inbox requires a
+  // one-time "Activate Form" click from an email FormSubmit sends that inbox
+  // — already done once travel.igotyou@gmail.com receives its first email.
+  document.getElementById('bookingForm').addEventListener('submit', function (e) {
     var hasFile = document.getElementById('paymentProof').files.length > 0;
     var names = document.getElementById('allApplicantNames').value.trim();
     var contact = document.getElementById('clientContact').value.trim();
@@ -1553,62 +1762,48 @@
     if (!contact) missing.push('your Viber/WhatsApp number');
     if (!email || !emailField.checkValidity()) missing.push('a valid email address');
     if (missing.length > 0) {
+      e.preventDefault();
       errEl.textContent = 'Please add ' + missing.join(', ') + ' before continuing.';
       errEl.hidden = false;
       return;
     }
     errEl.hidden = true;
-    submitBookingForm();
-    showStep(4);
+    fillHiddenBookingFields();
+    // no preventDefault — let the browser submit the real multipart form
+  });
+
+  function fillHiddenBookingFields() {
+    var q = computeQuote();
+    var name = document.getElementById('clientName').value.trim();
+    var travel = document.getElementById('travelDate').value;
+    var svcLabel = q.svc === 'coach' ? 'Coaching Only' : 'Full Package';
+    document.getElementById('fsSubject').value = 'New Booking Submission - ' + (name || 'Client');
+    document.getElementById('fsMainName').value = name || '—';
+    document.getElementById('fsTravelDate').value = formatDate(travel);
+    document.getElementById('fsPackage').value = svcLabel;
+    document.getElementById('fsAdults').value = q.adults;
+    document.getElementById('fsMinors').value = q.minors;
+    document.getElementById('fsRefused').value = q.numRefused;
+    document.getElementById('fsTotal').value = peso(q.total);
+    document.getElementById('fsAutoresponse').value = 'Hi ' + (name || 'there') + ', this confirms Mommy Di Visa Assistance Center received your booking submission and payment screenshot. Package: ' + svcLabel + '. Total due: ' + peso(q.total) + '. We will confirm your payment and reach out via Viber/WhatsApp with next steps. This is an automatic copy for your records.';
   }
 
-  // Emails the full submission (details + payment screenshot) to Mommy Di's
-  // team via FormSubmit (formsubmit.co) — a free form-to-email relay that
-  // needs no backend/server of our own. If the client also gave their email,
-  // FormSubmit sends them an automatic copy for their own records too.
-  // NOTE: the FIRST submission ever sent to a target inbox requires a
-  // one-time "Activate Form" click from an email FormSubmit sends that inbox.
-  function submitBookingForm() {
-    try {
-      var q = computeQuote();
-      var name = document.getElementById('clientName').value.trim();
-      var travel = document.getElementById('travelDate').value;
-      var contact = document.getElementById('clientContact').value.trim();
-      var email = document.getElementById('clientEmail').value.trim();
-      var allNames = document.getElementById('allApplicantNames').value.trim();
-      var svcLabel = q.svc === 'coach' ? 'Coaching Only' : 'Full Package';
-
-      var fd = new FormData();
-      fd.append('_subject', 'New Booking Submission - ' + (name || 'Client'));
-      fd.append('_captcha', 'false');
-      fd.append('_template', 'table');
-      fd.append('Main Applicant Name', name || '—');
-      fd.append('Full Names of All Applicants', allNames || '—');
-      fd.append('Target Travel Date', formatDate(travel));
-      fd.append('Package', svcLabel);
-      fd.append('Adult Applicants', String(q.adults));
-      fd.append('Minors Below 18', String(q.minors));
-      fd.append('Adults Previously Refused', String(q.numRefused));
-      fd.append('Total Quote', peso(q.total));
-      fd.append('Viber/WhatsApp Number', contact || '—');
-      fd.append('email', email || '');
-
-      var files = document.getElementById('paymentProof').files;
-      if (files && files.length > 0) {
-        fd.append('Payment Screenshot', files[0], files[0].name);
+  // If FormSubmit just redirected back here after a successful submission,
+  // reopen the modal straight to the confirmation step.
+  (function checkBookedRedirect() {
+    if (window.location.search.indexOf('booked=1') === -1) return;
+    document.addEventListener('DOMContentLoaded', function () {
+      var dialog = document.getElementById('paymentModal');
+      try {
+        if (typeof dialog.showModal === 'function') dialog.showModal();
+        else dialog.setAttribute('open', '');
+      } catch (e) { dialog.setAttribute('open', ''); }
+      showStep(4);
+      if (window.history && window.history.replaceState) {
+        window.history.replaceState({}, document.title, window.location.pathname);
       }
-
-      if (email) {
-        fd.append('_autoresponse', 'Hi ' + (name || 'there') + ', this confirms Mommy Di Visa Assistance Center received your booking submission and payment screenshot. Package: ' + svcLabel + '. Total due: ' + peso(q.total) + '. We will confirm your payment and reach out via Viber/WhatsApp with next steps. This is an automatic copy for your records.');
-      }
-
-      fetch('https://formsubmit.co/ajax/travel.igotyou@gmail.com', {
-        method: 'POST',
-        body: fd,
-        headers: { 'Accept': 'application/json' }
-      }).catch(function () { /* silent fail — Viber/WhatsApp remains the backup channel */ });
-    } catch (e) { /* silent fail — never block the booking flow on this */ }
-  }
+    });
+  })();
 
   function copyText(text, btn) {
     var original = btn.textContent;
@@ -1642,3 +1837,5 @@
 
 
 </script>
+</body>
+</html>
