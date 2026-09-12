@@ -676,7 +676,7 @@
     text-transform:uppercase;
     color:var(--ink-soft);
   }
-  .form-field input{
+  .form-field input, .form-field textarea{
     font-family:'Source Sans 3', sans-serif;
     font-size:0.94rem;
     color:var(--ink);
@@ -685,7 +685,9 @@
     border-radius:10px;
     padding:10px 12px;
   }
-  .form-field input:focus-visible{outline:2px solid var(--accent); outline-offset:1px;}
+  .form-field textarea{resize:vertical; min-height:52px; line-height:1.4;}
+  .form-field input:focus-visible, .form-field textarea:focus-visible{outline:2px solid var(--accent); outline-offset:1px;}
+  .field-hint{margin:6px 0 0; font-size:0.82rem; color:var(--ink-soft);}
   .form-error{color:var(--accent); font-size:0.86rem; margin-top:12px;}
 
   .quote-box{
@@ -1124,7 +1126,7 @@
 
       <div class="form-grid">
         <label class="form-field">
-          <span class="field-label">Full Name</span>
+          <span class="field-label">Main Applicant's Full Name</span>
           <input type="text" id="clientName" placeholder="Juan Dela Cruz">
         </label>
         <label class="form-field">
@@ -1260,20 +1262,26 @@
         <p class="proof-confirm" id="proofConfirmMsg" hidden>✓ Screenshot attached</p>
       </div>
 
-      <div class="form-grid">
+      <label class="form-field" style="margin-top:18px;">
+        <span class="field-label">Full Names of All Applicants *</span>
+        <textarea id="allApplicantNames" rows="2" placeholder="e.g. Juan Dela Cruz, Maria Dela Cruz, Jose Dela Cruz Jr." oninput="clearStep3Error()"></textarea>
+      </label>
+      <p class="field-hint">Please list the full legal name of every applicant included in this quote — adults and minors.</p>
+
+      <div class="form-grid" style="margin-top:18px;">
         <label class="form-field">
-          <span class="field-label">Viber / WhatsApp Number (optional)</span>
+          <span class="field-label">Viber / WhatsApp Number *</span>
           <input type="text" id="clientContact" placeholder="0949 325 9411" oninput="clearStep3Error()">
         </label>
         <label class="form-field">
-          <span class="field-label">Email Address (optional)</span>
+          <span class="field-label">Email Address *</span>
           <input type="email" id="clientEmail" placeholder="you@email.com" oninput="clearStep3Error()">
         </label>
       </div>
 
       <div class="proof-box">
-        <h4>Also Message Us Your Proof</h4>
-        <p>For the fastest confirmation, please also send your payment screenshot along with your name and target travel date via Viber or WhatsApp:</p>
+        <h4>As a Backup, Also Message Us Your Proof</h4>
+        <p>Clicking "Continue" below will automatically email your submitted details and screenshot to our team (and to you too, if you gave your email above). As a backup in case that doesn't go through, please also send your screenshot, name, and target travel date via Viber or WhatsApp:</p>
         <div class="proof-links">
           <a class="btn btn-ghost btn-block" href="viber://chat?number=%2B639493259411">Message via Viber · +63 949 325 9411</a>
           <a class="btn btn-ghost btn-block" href="https://wa.me/639493259411">Message via WhatsApp · +63 949 325 9411</a>
@@ -1294,7 +1302,8 @@
       <span class="eyebrow">Step 4 of 4 · Book Your Call</span>
       <h2>You're all set!</h2>
       <div class="proof-box">
-        <p style="margin-bottom:0;">You may now book your strategy call with Mommy Di. This booking will be confirmed as soon as your payment is confirmed by our team. Once confirmed, our team will reach out to send the next steps so we can start preparing your US visa application.</p>
+        <p>You may now book your strategy call with Mommy Di. This booking will be confirmed as soon as your payment is confirmed by our team. Once confirmed, our team will reach out to send the next steps so we can start preparing your US visa application.</p>
+        <p id="copyConfirmMsg" style="margin-bottom:0;">We're sending a copy of your submitted details and screenshot to our team now, and to your email too if you gave one. If you don't see a confirmation email shortly, please also message your screenshot via Viber or WhatsApp as a backup.</p>
       </div>
 
       <div class="modal-actions">
@@ -1376,6 +1385,7 @@
     document.getElementById('fileDrop').classList.remove('has-file');
     document.getElementById('clientContact').value = '';
     document.getElementById('clientEmail').value = '';
+    document.getElementById('allApplicantNames').value = '';
     clearStep3Error();
     showStep(1);
     var dialog = document.getElementById('paymentModal');
@@ -1532,14 +1542,72 @@
 
   function attemptContinue() {
     var hasFile = document.getElementById('paymentProof').files.length > 0;
+    var names = document.getElementById('allApplicantNames').value.trim();
+    var contact = document.getElementById('clientContact').value.trim();
+    var email = document.getElementById('clientEmail').value.trim();
+    var emailField = document.getElementById('clientEmail');
     var errEl = document.getElementById('step3Error');
-    if (!hasFile) {
-      errEl.textContent = 'Please attach your payment screenshot before continuing.';
+    var missing = [];
+    if (!hasFile) missing.push('your payment screenshot');
+    if (!names) missing.push('the full names of all applicants');
+    if (!contact) missing.push('your Viber/WhatsApp number');
+    if (!email || !emailField.checkValidity()) missing.push('a valid email address');
+    if (missing.length > 0) {
+      errEl.textContent = 'Please add ' + missing.join(', ') + ' before continuing.';
       errEl.hidden = false;
       return;
     }
     errEl.hidden = true;
+    submitBookingForm();
     showStep(4);
+  }
+
+  // Emails the full submission (details + payment screenshot) to Mommy Di's
+  // team via FormSubmit (formsubmit.co) — a free form-to-email relay that
+  // needs no backend/server of our own. If the client also gave their email,
+  // FormSubmit sends them an automatic copy for their own records too.
+  // NOTE: the FIRST submission ever sent to a target inbox requires a
+  // one-time "Activate Form" click from an email FormSubmit sends that inbox.
+  function submitBookingForm() {
+    try {
+      var q = computeQuote();
+      var name = document.getElementById('clientName').value.trim();
+      var travel = document.getElementById('travelDate').value;
+      var contact = document.getElementById('clientContact').value.trim();
+      var email = document.getElementById('clientEmail').value.trim();
+      var allNames = document.getElementById('allApplicantNames').value.trim();
+      var svcLabel = q.svc === 'coach' ? 'Coaching Only' : 'Full Package';
+
+      var fd = new FormData();
+      fd.append('_subject', 'New Booking Submission - ' + (name || 'Client'));
+      fd.append('_captcha', 'false');
+      fd.append('_template', 'table');
+      fd.append('Main Applicant Name', name || '—');
+      fd.append('Full Names of All Applicants', allNames || '—');
+      fd.append('Target Travel Date', formatDate(travel));
+      fd.append('Package', svcLabel);
+      fd.append('Adult Applicants', String(q.adults));
+      fd.append('Minors Below 18', String(q.minors));
+      fd.append('Adults Previously Refused', String(q.numRefused));
+      fd.append('Total Quote', peso(q.total));
+      fd.append('Viber/WhatsApp Number', contact || '—');
+      fd.append('email', email || '');
+
+      var files = document.getElementById('paymentProof').files;
+      if (files && files.length > 0) {
+        fd.append('Payment Screenshot', files[0], files[0].name);
+      }
+
+      if (email) {
+        fd.append('_autoresponse', 'Hi ' + (name || 'there') + ', this confirms Mommy Di Visa Assistance Center received your booking submission and payment screenshot. Package: ' + svcLabel + '. Total due: ' + peso(q.total) + '. We will confirm your payment and reach out via Viber/WhatsApp with next steps. This is an automatic copy for your records.');
+      }
+
+      fetch('https://formsubmit.co/ajax/travel.igotyou@gmail.com', {
+        method: 'POST',
+        body: fd,
+        headers: { 'Accept': 'application/json' }
+      }).catch(function () { /* silent fail — Viber/WhatsApp remains the backup channel */ });
+    } catch (e) { /* silent fail — never block the booking flow on this */ }
   }
 
   function copyText(text, btn) {
