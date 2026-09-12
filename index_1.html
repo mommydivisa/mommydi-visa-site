@@ -1,0 +1,1576 @@
+<title>Mommy Di Visa Assistance Center</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Source+Sans+3:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap');
+
+  :root{
+    --bg:#F3E8E4;
+    --surface:#FFFFFF;
+    --surface-2:#ECDCD6;
+    --ink:#2B211F;
+    --ink-soft:#786863;
+    --border:#E3D2CB;
+    --primary:#7C2A44;
+    --primary-ink:#FBEEF0;
+    --accent:#9E3654;
+    --accent-ink:#FFF5F7;
+    --gold:#B98B5E;
+    --shadow: 0 18px 40px -22px rgba(43,33,31,0.30);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#1E1517;
+      --surface:#2A1E20;
+      --surface-2:#33262A;
+      --ink:#F5E9E7;
+      --ink-soft:#C9B5B0;
+      --border:#4A363B;
+      --primary:#D98BA0;
+      --primary-ink:#2B1017;
+      --accent:#E48CA6;
+      --accent-ink:#2B0E15;
+      --gold:#D8B084;
+      --shadow: 0 18px 44px -20px rgba(0,0,0,0.6);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#1E1517;
+    --surface:#2A1E20;
+    --surface-2:#33262A;
+    --ink:#F5E9E7;
+    --ink-soft:#C9B5B0;
+    --border:#4A363B;
+    --primary:#D98BA0;
+    --primary-ink:#2B1017;
+    --accent:#E48CA6;
+    --accent-ink:#2B0E15;
+    --gold:#D8B084;
+    --shadow: 0 18px 44px -20px rgba(0,0,0,0.6);
+  }
+
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Source Sans 3', system-ui, -apple-system, "Segoe UI", sans-serif;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:'Playfair Display', Georgia, 'Times New Roman', serif;
+    font-weight:700;
+    text-wrap:balance;
+    margin:0;
+    color:var(--ink);
+  }
+  .mono{
+    font-family:'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+  a{color:inherit;}
+  img{max-width:100%;}
+
+  .wrap{
+    max-width:960px;
+    margin:0 auto;
+    padding-inline:20px;
+  }
+
+  /* ---------- top bar ---------- */
+  .topbar{
+    padding-block:18px;
+    border-bottom:1px solid var(--border);
+  }
+  .topbar .wrap{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+    flex-wrap:wrap;
+  }
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .stamp{
+    width:38px;height:38px;border-radius:50%;
+    border:2px solid var(--primary);
+    display:flex;align-items:center;justify-content:center;
+    color:var(--primary);
+    font-family:'Playfair Display',serif;
+    font-weight:700;
+    font-size:15px;
+    flex:none;
+    transform:rotate(-8deg);
+  }
+  .brand-name{
+    font-family:'Playfair Display',serif;
+    font-weight:600;
+    font-size:1.05rem;
+  }
+  .brand-name span{
+    display:block;
+    font-family:'IBM Plex Mono', monospace;
+    font-weight:500;
+    font-size:0.62rem;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+  }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:11px 20px;
+    border-radius:999px;
+    background:var(--accent);
+    color:var(--accent-ink);
+    font-weight:600;
+    font-size:0.92rem;
+    text-decoration:none;
+    border:none;
+    cursor:pointer;
+    box-shadow:var(--shadow);
+    transition:transform .15s ease;
+    white-space:nowrap;
+  }
+  .btn:hover{transform:translateY(-1px);}
+  .btn:focus-visible{outline:3px solid var(--gold); outline-offset:2px;}
+  .btn-ghost{
+    background:transparent;
+    color:var(--primary);
+    border:1.5px solid var(--primary);
+    box-shadow:none;
+  }
+  .btn-block{width:100%; justify-content:center; margin-top:4px;}
+  .btn:disabled{opacity:0.45; cursor:not-allowed; box-shadow:none; transform:none;}
+  .btn-fb{
+    background:#1877F2;
+    color:#FFFFFF;
+    box-shadow: 0 18px 40px -22px rgba(24,119,242,0.55);
+  }
+  .fb-mark{
+    display:inline-flex; align-items:center; justify-content:center;
+    width:19px; height:19px; border-radius:5px;
+    background:rgba(255,255,255,0.25);
+    font-family:'Libre Franklin', sans-serif;
+    font-weight:800;
+    font-size:0.82rem;
+    flex:none;
+  }
+  .btn-tiktok{
+    background:#111318;
+    color:#FFFFFF;
+    box-shadow: 0 18px 40px -22px rgba(17,19,24,0.55);
+  }
+  .tiktok-mark{
+    display:inline-flex; align-items:center; justify-content:center;
+    width:19px; height:19px; border-radius:5px;
+    background:linear-gradient(135deg,#25F4EE,#FE2C55);
+    color:#111318;
+    font-weight:800;
+    font-size:0.82rem;
+    flex:none;
+  }
+
+  /* ---------- hero ---------- */
+  .hero{
+    padding-block: 40px 44px;
+  }
+  .hero-banner{
+    display:block;
+    width:100%;
+    height:auto;
+    border-radius:20px;
+    box-shadow:var(--shadow);
+    animation: rise .6s ease-out both;
+  }
+  .hero-actions{
+    margin-top:26px;
+    display:flex;
+    gap:14px;
+    flex-wrap:wrap;
+  }
+
+  /* ---------- sections ---------- */
+  section{padding-block:44px;}
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.72rem;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--accent);
+    font-weight:600;
+    margin-bottom:10px;
+    display:block;
+  }
+  .section-head{
+    max-width:60ch;
+    margin-bottom:32px;
+  }
+  .section-head h2{
+    font-size:clamp(1.5rem,3vw,1.9rem);
+  }
+  .section-head p{
+    color:var(--ink-soft);
+    margin-top:10px;
+  }
+
+  /* why-assistance */
+  .reason-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(220px,1fr));
+    gap:20px;
+  }
+  .reason-card{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:16px;
+    padding:22px 20px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+  }
+  .reason-icon{
+    width:44px; height:44px;
+    border-radius:50%;
+    background:var(--surface-2);
+    color:var(--accent);
+    display:flex; align-items:center; justify-content:center;
+    flex:none;
+  }
+  .reason-card h3{font-size:1.05rem;}
+  .reason-card p{margin:0; color:var(--ink-soft); font-size:0.9rem;}
+  .reason-cta{
+    margin-top:34px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:14px;
+    text-align:center;
+  }
+  .reason-cta p{
+    font-family:'Playfair Display',serif;
+    font-size:1.2rem;
+    font-weight:700;
+    color:var(--ink);
+  }
+
+  /* reviews */
+  .video-review{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    background:#111318;
+    border-radius:16px;
+    padding:20px 22px;
+    margin-bottom:24px;
+    text-decoration:none;
+    flex-wrap:wrap;
+    box-shadow:var(--shadow);
+  }
+  .video-thumb-wrap{
+    position:relative;
+    width:84px;
+    aspect-ratio:9/16;
+    border-radius:12px;
+    overflow:hidden;
+    flex:none;
+    box-shadow:0 8px 20px -8px rgba(0,0,0,0.6);
+  }
+  .video-thumb{width:100%; height:100%; object-fit:cover; display:block;}
+  .play-overlay{
+    position:absolute; inset:0;
+    display:flex; align-items:center; justify-content:center;
+    background:rgba(10,10,14,0.28);
+    color:#FFFFFF;
+    font-size:1.3rem;
+  }
+  .video-review-text{display:flex; flex-direction:column; gap:2px; flex:1; min-width:200px;}
+  .video-review-label{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.68rem;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:#F0916A;
+  }
+  .video-review-text strong{color:#FFFFFF; font-family:'Playfair Display',serif; font-size:1.05rem; font-weight:700;}
+  .video-review-sub{color:rgba(255,255,255,0.68); font-size:0.86rem;}
+  .review-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
+    gap:20px;
+  }
+  .review-card{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:16px;
+    padding:22px 20px;
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+  }
+  .review-head{
+    display:flex;
+    align-items:center;
+    gap:12px;
+  }
+  .review-avatar{
+    width:40px; height:40px;
+    border-radius:50%;
+    background:var(--surface-2);
+    color:var(--accent);
+    font-family:'Playfair Display',serif;
+    font-weight:700;
+    font-size:0.85rem;
+    display:flex; align-items:center; justify-content:center;
+    flex:none;
+  }
+  .review-name{display:block; font-weight:600; font-size:0.94rem;}
+  .review-meta{display:block; font-size:0.76rem; color:var(--ink-soft);}
+  .review-quote{margin:0; color:var(--ink-soft); font-size:0.9rem; line-height:1.6;}
+  .review-note{display:block; margin-top:8px; font-size:0.78rem; color:var(--gold); font-style:italic;}
+
+  /* pricing */
+  .price-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(240px,1fr));
+    gap:20px;
+  }
+  .price-card{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:16px;
+    padding:26px 24px;
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+    position:relative;
+  }
+  .price-card.featured{
+    border-color:var(--accent);
+    box-shadow:var(--shadow);
+  }
+  .badge{
+    position:absolute;
+    top:-11px; right:20px;
+    background:var(--accent);
+    color:var(--accent-ink);
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.62rem;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    padding:5px 12px;
+    border-radius:999px;
+    font-weight:600;
+  }
+  .price-card h3{font-size:1.15rem;}
+  .price-card .amount{
+    font-family:'Playfair Display',serif;
+    font-size:2.1rem;
+    font-weight:600;
+    color:var(--primary);
+  }
+  .price-card .amount sup{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.85rem;
+    font-weight:600;
+    color:var(--ink-soft);
+    top:-1em;
+  }
+  .price-card .unit{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.72rem;
+    color:var(--ink-soft);
+    letter-spacing:.04em;
+  }
+  .price-card ul{
+    margin:0; padding-left:0;
+    list-style:none;
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+    font-size:0.9rem;
+    color:var(--ink-soft);
+  }
+  .price-card ul li{padding-left:20px; position:relative;}
+  .price-card ul li::before{
+    content:"✓";
+    position:absolute; left:0; top:0;
+    color:var(--accent);
+    font-weight:700;
+  }
+  .price-note{
+    color:var(--ink-soft);
+    font-size:0.9rem;
+  }
+  .coaching-note{
+    margin:10px 0 0;
+    padding:12px 14px;
+    background:var(--surface-2);
+    border-left:3px solid var(--gold);
+    border-radius:8px;
+    font-size:0.84rem;
+    font-style:italic;
+    color:var(--ink-soft);
+  }
+
+  .other-costs{
+    margin-top:24px;
+    background:var(--surface-2);
+    border-radius:14px;
+    padding:20px 22px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+    align-items:flex-start;
+  }
+  .other-costs h4{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.72rem;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    margin:0 0 10px;
+    color:var(--ink-soft);
+  }
+  .cost-line{
+    display:flex;
+    justify-content:space-between;
+    gap:16px;
+    font-size:0.92rem;
+    padding-block:4px;
+    border-bottom:1px dashed var(--border);
+    font-variant-numeric: tabular-nums;
+  }
+  .cost-line:last-child{border-bottom:none;}
+  .cost-line .to{color:var(--ink-soft); font-size:0.82rem;}
+
+  /* process */
+  .steps{
+    display:flex;
+    flex-direction:column;
+    gap:0;
+  }
+  .step{
+    display:grid;
+    grid-template-columns:52px 1fr;
+    gap:18px;
+    padding-block:18px;
+  }
+  .step:not(:last-child){border-bottom:1px solid var(--border);}
+  .step-num{
+    width:42px;height:42px;
+    border-radius:50%;
+    background:var(--primary);
+    color:var(--primary-ink);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'IBM Plex Mono',monospace;
+    font-weight:600;
+    font-size:0.95rem;
+  }
+  .step h3{font-size:1.05rem; margin-bottom:4px;}
+  .step p{margin:0; color:var(--ink-soft); font-size:0.94rem;}
+
+  /* checklist */
+  .checklist{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:16px;
+    padding:8px 26px;
+  }
+  .checklist ul{
+    list-style:none;
+    margin:0; padding:0;
+  }
+  .checklist li{
+    display:flex;
+    gap:14px;
+    align-items:flex-start;
+    padding-block:14px;
+  }
+  .checklist li:not(:last-child){border-bottom:1px solid var(--border);}
+  .checkbox{
+    flex:none;
+    width:20px;height:20px;
+    border-radius:5px;
+    border:2px solid var(--gold);
+    margin-top:2px;
+  }
+
+  /* faq */
+  details{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:16px 20px;
+  }
+  details + details{margin-top:12px;}
+  summary{
+    cursor:pointer;
+    font-weight:600;
+    list-style:none;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:16px;
+  }
+  summary::-webkit-details-marker{display:none;}
+  summary::after{
+    content:"+";
+    font-family:'IBM Plex Mono',monospace;
+    font-size:1.3rem;
+    color:var(--accent);
+    flex:none;
+  }
+  details[open] summary::after{content:"–";}
+  details p{
+    margin:14px 0 2px;
+    color:var(--ink-soft);
+    font-size:0.94rem;
+  }
+
+  /* footer cta */
+  .cta-band{
+    background:var(--primary);
+    color:var(--primary-ink);
+    border-radius:20px;
+    padding:36px 30px;
+    text-align:center;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:16px;
+  }
+  .cta-band h2{color:var(--primary-ink); font-size:clamp(1.4rem,3vw,1.8rem);}
+  .cta-band p{color:var(--primary-ink); opacity:0.85; max-width:48ch;}
+  .cta-band .btn{background:var(--accent-ink); color:var(--primary); box-shadow:none;}
+
+  footer{
+    padding-block:30px 50px;
+    text-align:center;
+    color:var(--ink-soft);
+    font-size:0.85rem;
+  }
+  footer a{text-decoration:underline;}
+
+  .disclaimer{
+    font-size:0.82rem;
+    color:var(--ink-soft);
+    border-left:3px solid var(--gold);
+    padding-left:14px;
+    margin-top:22px;
+    max-width:60ch;
+  }
+
+  /* ---------- payment modal ---------- */
+  dialog#paymentModal{
+    border:none;
+    border-radius:20px;
+    padding:0;
+    max-width:520px;
+    width:92vw;
+    background:var(--surface);
+    color:var(--ink);
+    box-shadow:var(--shadow);
+  }
+  dialog#paymentModal::backdrop{
+    background:rgba(6,16,15,0.6);
+  }
+  .modal-inner{
+    padding:30px 28px 26px;
+    position:relative;
+    max-height:85vh;
+    overflow-y:auto;
+  }
+  .modal-close{
+    position:absolute; top:14px; right:14px;
+    background:none; border:none;
+    font-size:1.6rem; line-height:1;
+    color:var(--ink-soft);
+    cursor:pointer;
+    padding:6px;
+    border-radius:8px;
+  }
+  .modal-close:hover{color:var(--accent);}
+  .modal-inner h2{font-size:1.4rem; padding-right:24px;}
+  .modal-sub{color:var(--ink-soft); margin-top:8px; font-size:0.92rem;}
+  .pkg-picker{display:flex; gap:8px; flex-wrap:wrap; margin-top:20px;}
+  .pkg-pill{
+    border:1.5px solid var(--border);
+    border-radius:999px;
+    padding:8px 14px;
+    font-size:0.85rem;
+    cursor:pointer;
+    display:flex; align-items:center; gap:7px;
+  }
+  .pkg-pill input{accent-color:var(--accent); margin:0;}
+  .pkg-pill:has(input:checked){border-color:var(--accent); color:var(--accent); font-weight:600;}
+  .modal-amount-row{
+    display:flex; justify-content:space-between; align-items:center;
+    margin-top:18px; padding:14px 16px;
+    background:var(--surface-2); border-radius:12px;
+    font-size:0.95rem;
+  }
+  .modal-amount-row strong{font-size:1.2rem; color:var(--primary);}
+  .pay-methods{display:flex; flex-direction:column; gap:12px; margin-top:20px;}
+  .pay-card{border:1px solid var(--border); border-radius:12px; padding:14px 16px;}
+  .pay-card h4{
+    font-family:'IBM Plex Mono',monospace; font-size:0.68rem; letter-spacing:.1em;
+    text-transform:uppercase; color:var(--ink-soft); margin:0 0 10px;
+  }
+  .pay-field{display:flex; justify-content:space-between; align-items:center; gap:12px; padding-block:5px;}
+  .pay-field .label{display:block; font-size:0.68rem; color:var(--ink-soft); letter-spacing:.04em; text-transform:uppercase; margin-bottom:2px;}
+  .pay-field .value{font-size:0.95rem; font-weight:600;}
+  .copy-btn{
+    border:1px solid var(--border); background:transparent; color:var(--ink);
+    border-radius:8px; padding:6px 12px; font-size:0.75rem; cursor:pointer; flex:none;
+    font-family:'IBM Plex Mono',monospace;
+  }
+  .copy-btn:hover{border-color:var(--accent); color:var(--accent);}
+  .proof-box{margin-top:18px; background:var(--surface-2); border-radius:12px; padding:16px;}
+  .proof-box h4{margin:0 0 6px; font-size:0.95rem; font-family:'Playfair Display',serif;}
+  .proof-box p{margin:0 0 12px; font-size:0.88rem; color:var(--ink-soft);}
+  .proof-links{display:flex; flex-direction:column; gap:8px;}
+  .confirm-row{
+    display:flex; align-items:flex-start; gap:10px;
+    margin-top:20px; font-size:0.9rem; cursor:pointer;
+  }
+  .confirm-row input{margin-top:3px; accent-color:var(--accent); width:18px; height:18px; flex:none;}
+  .modal-actions{display:flex; justify-content:flex-end; gap:10px; margin-top:20px; flex-wrap:wrap;}
+
+  .file-drop{
+    display:flex; align-items:center; justify-content:space-between; gap:12px;
+    border:1.5px dashed var(--border); border-radius:10px; padding:12px 14px;
+    cursor:pointer; background:var(--surface);
+  }
+  .file-drop:hover{border-color:var(--accent);}
+  .file-drop.has-file{border-style:solid; border-color:var(--accent);}
+  .file-drop input[type="file"]{position:absolute; width:1px; height:1px; opacity:0; overflow:hidden;}
+  .file-drop-label{font-size:0.88rem; color:var(--ink-soft); overflow-wrap:anywhere;}
+  .file-drop-btn{
+    border:1px solid var(--border); background:transparent; color:var(--ink);
+    border-radius:8px; padding:6px 12px; font-size:0.75rem; cursor:pointer; flex:none;
+    font-family:'IBM Plex Mono',monospace;
+  }
+  .proof-confirm{color:var(--accent); font-size:0.85rem; font-weight:600; margin:10px 0 0;}
+
+  .step-tracker{display:flex; align-items:center; gap:6px; margin-bottom:18px;}
+  .step-dot{width:9px; height:9px; border-radius:50%; background:var(--border); flex:none;}
+  .step-dot-active{background:var(--accent);}
+  .step-line{flex:1; height:1px; background:var(--border);}
+
+  .q-block{margin-top:20px;}
+  .q-block .pkg-picker{margin-top:8px;}
+  .form-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(180px,1fr));
+    gap:14px;
+    margin-top:18px;
+  }
+  .form-field{display:flex; flex-direction:column; gap:6px;}
+  .field-label{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.68rem;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+  }
+  .form-field input{
+    font-family:'Source Sans 3', sans-serif;
+    font-size:0.94rem;
+    color:var(--ink);
+    background:var(--surface);
+    border:1.5px solid var(--border);
+    border-radius:10px;
+    padding:10px 12px;
+  }
+  .form-field input:focus-visible{outline:2px solid var(--accent); outline-offset:1px;}
+  .form-error{color:var(--accent); font-size:0.86rem; margin-top:12px;}
+
+  .quote-box{
+    margin-top:18px;
+    background:var(--surface-2);
+    border-radius:12px;
+    padding:16px 18px;
+  }
+  .quote-line{
+    display:flex; justify-content:space-between; align-items:center; gap:12px;
+    padding-block:7px;
+    font-size:0.9rem;
+    border-bottom:1px dashed var(--border);
+  }
+  .quote-line:last-child{border-bottom:none;}
+  .quote-subtotal{font-weight:600;}
+  .quote-discount{color:var(--accent);}
+  .quote-total{
+    font-weight:700; font-size:1.05rem; color:var(--primary);
+    padding-top:12px; margin-top:4px; border-top:2px solid var(--border);
+  }
+
+  .avail-box{margin-top:18px; background:var(--surface-2); border-radius:12px; padding:16px;}
+  .avail-box h4{margin:0 0 6px; font-size:0.95rem; font-family:'Playfair Display',serif;}
+  .avail-box p{margin:0 0 8px; font-size:0.88rem; color:var(--ink-soft);}
+  .avail-box ul{margin:0 0 8px; padding-left:20px; font-size:0.9rem; color:var(--ink);}
+  .avail-note{font-size:0.8rem; font-style:italic; color:var(--gold); margin-bottom:0 !important;}
+
+  @keyframes rise{
+    from{opacity:0; transform:translateY(10px);}
+    to{opacity:1; transform:translateY(0);}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .hero-banner{animation:none;}
+  }
+
+  @media (max-width:560px){
+    .step{grid-template-columns:40px 1fr;}
+  }
+</style>
+
+<header class="topbar">
+  <div class="wrap">
+    <div class="brand">
+      <div class="stamp">MD</div>
+      <div class="brand-name">Mommy Di Visa Assistance Center<span>US B1/B2 Tourist Visa</span></div>
+    </div>
+    <button type="button" class="btn" onclick="openPayment()">Book a Strategy Call</button>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="hero">
+    <img class="hero-banner" src="banner.jpg" alt="Mommy Di Visa Assistance Center — Your Visa Journey, Our Priority. Expert guidance, personalized support, and a hassle-free process, so you can focus on your next adventure. Mommy Di, Founder & Visa Specialist. Visa Assistance with a Heart.">
+    <div class="hero-actions">
+      <button type="button" class="btn" onclick="openPayment()">Book a Strategy Call</button>
+      <a class="btn btn-ghost" href="#pricing">See rates</a>
+      <a class="btn btn-fb" href="https://web.facebook.com/profile.php?id=61573767958529&sk=reviews" target="_blank" rel="noopener"><span class="fb-mark">f</span> See Reviews on Facebook</a>
+      <a class="btn btn-tiktok" href="https://www.tiktok.com/@mommydiii" target="_blank" rel="noopener"><span class="tiktok-mark">♪</span> Follow on TikTok</a>
+    </div>
+  </section>
+
+  <section id="why-assistance">
+    <div class="section-head">
+      <span class="eyebrow">Why Get Assistance</span>
+      <h2>Why applicants choose to have help with their US visa</h2>
+      <p>Your interview lasts just a few minutes — how you prepare for it is what actually makes the difference.</p>
+    </div>
+    <div class="reason-grid">
+      <div class="reason-card">
+        <div class="reason-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4"/><path d="M9.5 14.5l2 2 4-4.5"/></svg></div>
+        <h3>Fewer Costly Mistakes</h3>
+        <p>A single unclear or inconsistent answer on your DS-160 can raise questions you didn't need to raise. A trained second pair of eyes catches this before you submit.</p>
+      </div>
+      <div class="reason-card">
+        <div class="reason-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><path d="M4 5h16v11H9l-4 4z"/></svg></div>
+        <h3>A Narrative That Holds Up</h3>
+        <p>Your purpose of travel and ties to the Philippines need to come across clearly in just a few minutes. We help you shape that story and say it with confidence.</p>
+      </div>
+      <div class="reason-card">
+        <div class="reason-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0"/><path d="M12 18v3"/><path d="M9 21h6"/></svg></div>
+        <h3>Real Interview Practice</h3>
+        <p>A one-on-one mock interview with a script means you're not answering the hard questions for the first time on the actual day.</p>
+      </div>
+      <div class="reason-card">
+        <div class="reason-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><path d="M12 21s-7-6.5-7-11a7 7 0 0 1 14 0c0 4.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+        <h3>Guided, Start to Finish</h3>
+        <p>From your DS-160 to biometrics and interview scheduling, you always know what comes next instead of piecing it together on your own.</p>
+      </div>
+      <div class="reason-card">
+        <div class="reason-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><path d="M20 12a8 8 0 1 1-2.34-5.66"/><path d="M20 4v5h-5"/></svg></div>
+        <h3>A Second Chance, Done Right</h3>
+        <p>If you've been refused before, we review what likely went wrong and help you rebuild a stronger, better-prepared application.</p>
+      </div>
+    </div>
+    <div class="reason-cta">
+      <p>Ready to get started?</p>
+      <a class="btn" href="#pricing">See My Packages &amp; Rates</a>
+    </div>
+  </section>
+
+  <section id="reviews">
+    <div class="section-head">
+      <span class="eyebrow">Client Reviews</span>
+      <h2>What clients are saying</h2>
+      <p>Real recommendations from Facebook, from clients who've been through the process.</p>
+    </div>
+
+    <a class="video-review" href="https://www.tiktok.com/@jenbarangan/video/7535419298760625415" target="_blank" rel="noopener">
+      <span class="video-thumb-wrap">
+        <img class="video-thumb" src="jen-review.png" alt="Jen Barangan-David sharing her US visa application experience on TikTok">
+        <span class="play-overlay">▶</span>
+      </span>
+      <span class="video-review-text">
+        <span class="video-review-label">Featured Video Review</span>
+        <strong>Jen Barangan shares her US visa experience</strong>
+        <span class="video-review-sub">Tap to watch on TikTok</span>
+      </span>
+      <span class="btn btn-tiktok"><span class="tiktok-mark">♪</span> Watch on TikTok</span>
+    </a>
+
+    <a class="video-review" href="https://www.tiktok.com/@mommydiii/video/7642256571900513556" target="_blank" rel="noopener">
+      <span class="video-thumb-wrap">
+        <img class="video-thumb" src="approvals-review.png" alt="Mommy Di sharing her clients' US visa approvals on TikTok">
+        <span class="play-overlay">▶</span>
+      </span>
+      <span class="video-review-text">
+        <span class="video-review-label">Client Success Reel</span>
+        <strong>Real visa approvals, one after another</strong>
+        <span class="video-review-sub">Tap to watch on TikTok</span>
+      </span>
+      <span class="btn btn-tiktok"><span class="tiktok-mark">♪</span> Watch on TikTok</span>
+    </a>
+
+    <div class="review-grid">
+      <div class="review-card">
+        <div class="review-head">
+          <span class="review-avatar">VF</span>
+          <div>
+            <span class="review-name">Veronica Fontanilla</span>
+            <span class="review-meta">recommends Mommy Di Visa Assistance Center</span>
+          </div>
+        </div>
+        <p class="review-quote">"Mommy Di and her team are one of the best. They helped us from start to finish, answered all our questions, and did their best to help us present our profiles in the smoothest way possible. For someone like me who spent 8 years overthinking and too scared to apply, I'm so glad I finally took the leap." <span class="review-note">— husband and mother both approved, 10-year visas</span></p>
+      </div>
+      <div class="review-card">
+        <div class="review-head">
+          <span class="review-avatar">JD</span>
+          <div>
+            <span class="review-name">Joseph De Roxas</span>
+            <span class="review-meta">recommends Mommy Di Visa Assistance Center</span>
+          </div>
+        </div>
+        <p class="review-quote">"Their services are top-notch & highly recommended! My utmost thank you to Mommy Di & her team for paving the way for my F-1 visa application after last year's denial — from completing my DS-160 to conducting a mock interview." <span class="review-note">— F-1 student visa, after a prior denial</span></p>
+      </div>
+      <div class="review-card">
+        <div class="review-head">
+          <span class="review-avatar">JD</span>
+          <div>
+            <span class="review-name">Jessica Ding</span>
+            <span class="review-meta">★★★★★ recommends Mommy Di Visa Assistance Center</span>
+          </div>
+        </div>
+        <p class="review-quote">"From the beginning until the approval of our visa, they guided us every step of the way. They were very responsive, professional, and always willing to answer my questions, which made the whole process much less stressful."</p>
+      </div>
+      <div class="review-card">
+        <div class="review-head">
+          <span class="review-avatar">SC</span>
+          <div>
+            <span class="review-name">Siena Chavez</span>
+            <span class="review-meta">recommends Mommy Di Visa Assistance Center</span>
+          </div>
+        </div>
+        <p class="review-quote">"Everything from day 1 to the interview went smoothly with their assistance. I didn't have to stress about anything because they handle every detail of the application. Mommy Di is also respectful and understanding with my circumstances."</p>
+      </div>
+      <div class="review-card">
+        <div class="review-head">
+          <span class="review-avatar">TR</span>
+          <div>
+            <span class="review-name">Toni RD</span>
+            <span class="review-meta">recommends Mommy Di Visa Assistance Center</span>
+          </div>
+        </div>
+        <p class="review-quote">"From assisting me with the application forms to conducting mock interviews, they were very hands-on, patient and thorough. Their dedication made everything smooth and less stressful, and I felt well-prepared every step of the way."</p>
+      </div>
+      <div class="review-card">
+        <div class="review-head">
+          <span class="review-avatar">MQ</span>
+          <div>
+            <span class="review-name">Maeg Que-Yu</span>
+            <span class="review-meta">recommends Mommy Di Visa Assistance Center</span>
+          </div>
+        </div>
+        <p class="review-quote">"We just got our US visa approval and we couldn't have done it without their expert guidance. They made the entire process seamless and stress-free for our family. If you want a smooth and reliable experience, this is the team to trust."</p>
+      </div>
+      <div class="review-card">
+        <div class="review-head">
+          <span class="review-avatar">KM</span>
+          <div>
+            <span class="review-name">Kez Maurin</span>
+            <span class="review-meta">recommends Mommy Di Visa Assistance Center</span>
+          </div>
+        </div>
+        <p class="review-quote">"Highly recommended! The team was very helpful, responsive, and professional throughout my US visa application process. They guided me every step of the way, and I'm happy to say my visa was approved."</p>
+      </div>
+      <div class="review-card">
+        <div class="review-head">
+          <span class="review-avatar">KE</span>
+          <div>
+            <span class="review-name">Koko Escobar Limbo</span>
+            <span class="review-meta">recommends Mommy Di Visa Assistance Center</span>
+          </div>
+        </div>
+        <p class="review-quote">"Excellent service! The team was professional, highly responsive, and exceeded my expectations. They made a complicated process feel simple and stress-free. Highly recommended for anyone needing visa assistance!"</p>
+      </div>
+      <div class="review-card">
+        <div class="review-head">
+          <span class="review-avatar">TL</span>
+          <div>
+            <span class="review-name">Tin Liaban</span>
+            <span class="review-meta">recommends Mommy Di Visa Assistance Center</span>
+          </div>
+        </div>
+        <p class="review-quote">"So thankful for Mommy Di and her Team! I got approved ❤️"</p>
+      </div>
+    </div>
+    <div class="reason-cta">
+      <a class="btn btn-fb" href="https://web.facebook.com/profile.php?id=61573767958529&sk=reviews" target="_blank" rel="noopener"><span class="fb-mark">f</span> See All Reviews on Facebook</a>
+    </div>
+  </section>
+
+  <section id="pricing">
+    <div class="section-head">
+      <span class="eyebrow">Rates</span>
+      <h2>Assistance fees</h2>
+      <p>End-to-end support for your application — priced per applicant, well below typical travel-agency assistance fees.</p>
+    </div>
+
+    <div class="price-grid">
+      <div class="price-card featured">
+        <span class="badge">Most booked</span>
+        <h3>New Application</h3>
+        <div><span class="amount">₱5,290</span></div>
+        <div class="unit">PER APPLICANT · NEVER BEEN REFUSED</div>
+        <ul>
+          <li>One-on-one strategy call with Mommy Di</li>
+          <li>Complete DS-160 form</li>
+          <li>Travel narrative &amp; ties strategy</li>
+          <li>Visa fee payment assistance</li>
+          <li>Biometrics &amp; interview scheduling</li>
+          <li>Mock interview with script</li>
+        </ul>
+        <button type="button" class="btn btn-block" onclick="openPayment('new')">Reserve This Package</button>
+      </div>
+
+      <div class="price-card">
+        <h3>Reapplication</h3>
+        <div><span class="amount">₱5,690</span></div>
+        <div class="unit">PER APPLICANT · PREVIOUSLY REFUSED</div>
+        <ul>
+          <li>Everything in New Application</li>
+          <li>Review of your previous application</li>
+          <li>Assessment of likely refusal reasons</li>
+          <li>Rebuilt strategy for your new attempt</li>
+        </ul>
+        <button type="button" class="btn btn-block" onclick="openPayment('reapp')">Reserve This Package</button>
+      </div>
+
+      <div class="price-card">
+        <h3>Coaching Only</h3>
+        <div><span class="amount">₱3,500</span></div>
+        <div class="unit">DIY APPLICANTS · NO AGENCY</div>
+        <ul>
+          <li>One-on-one strategy call with Mommy Di</li>
+          <li>Review of your own DS-160</li>
+          <li>Flags on parts that need editing</li>
+          <li>One-on-one mock interview, incl. common embassy questions</li>
+        </ul>
+        <p class="coaching-note">"I will make my own DS-160 and schedule my own interview. I just need help with reviewing my DS-160 and with the mock interview."</p>
+        <button type="button" class="btn btn-block" onclick="openPayment('coach')">Reserve This Package</button>
+      </div>
+    </div>
+
+    <p class="price-note" style="margin-top:20px;">Coaching Only is for applicants who prepared (or are preparing) their own application and are not currently working with a travel agency. Rates are per applicant — groups of 3 or more get 10% off, and applicants below 18 are a flat ₱3,000 each. Get an exact quote when you book.</p>
+
+    <div class="other-costs">
+      <div style="flex:1; min-width:220px;">
+        <h4>Paid to Mommy Di</h4>
+        <div class="cost-line"><span>Assistance fee</span><span class="mono">₱5,290 – ₱5,690</span></div>
+      </div>
+      <div style="flex:1; min-width:220px;">
+        <h4>Paid to Other Parties</h4>
+        <div class="cost-line"><span>US visa application fee <span class="to">→ US Embassy</span></span><span class="mono">US$185 (~₱11,470)</span></div>
+        <div class="cost-line"><span>Delivery of approved visa <span class="to">→ 2GO</span></span><span class="mono">₱750</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="process">
+    <div class="section-head">
+      <span class="eyebrow">Process</span>
+      <h2>How it works, from booking to interview day</h2>
+      <p>Six steps, start to finish. You're never doing this alone.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div><h3>Book your slot</h3><p>Choose New Application, Reapplication, or Coaching Only, and book your strategy call.</p></div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div><h3>Application setup</h3><p>My team begins drafting your DS-160 and creates your US visa scheduling account.</p></div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div><h3>Strategy call</h3><p>We meet one-on-one to review your details, spot possible red flags, and shape your travel narrative and ties to the Philippines.</p></div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div><h3>Payment &amp; scheduling</h3><p>We assist with your visa fee payment (RCBC or credit card) and schedule your biometrics at Parqal and your embassy interview.</p></div>
+      </div>
+      <div class="step">
+        <div class="step-num">5</div>
+        <div><h3>Mock interview</h3><p>A full practice interview with a script, tailored to your case and purpose of travel.</p></div>
+      </div>
+      <div class="step">
+        <div class="step-num">6</div>
+        <div><h3>Interview day</h3><p>You walk in prepared and confident — with ongoing consultation from us along the way.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="checklist">
+    <div class="section-head">
+      <span class="eyebrow">Preparation</span>
+      <h2>What to have ready</h2>
+      <p>General guidance for a B1/B2 application — your case manager will confirm exactly what applies to you.</p>
+    </div>
+    <div class="checklist">
+      <ul>
+        <li><span class="checkbox"></span><span>Valid passport, with at least 6 months' validity beyond your intended travel</span></li>
+        <li><span class="checkbox"></span><span>Previous passport(s), if you've traveled internationally before</span></li>
+        <li><span class="checkbox"></span><span>Purpose-of-travel details, if applicable (invitation, event, itinerary)</span></li>
+        <li><span class="checkbox"></span><span>2x2 photo meeting DS-160 photo requirements</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="section-head">
+      <span class="eyebrow">FAQ</span>
+      <h2>Common questions</h2>
+    </div>
+
+    <details open>
+      <summary>What's the difference between New Application and Reapplication pricing?</summary>
+      <p>A reapplication (previously refused) requires additional review of your past application and an assessment of the likely reasons for refusal, so we can rebuild a stronger strategy. New applications are ₱5,290 per applicant; reapplications are ₱5,690 per applicant.</p>
+    </details>
+    <details>
+      <summary>What exactly is included in the assistance fee?</summary>
+      <p>One-on-one consultation, full DS-160 completion, application review, strategy planning for your travel narrative and ties to the Philippines, setup of your US visa scheduling account, help paying the visa fee, biometrics scheduling at Parqal, interview scheduling, and a 1-on-1 mock interview with a script.</p>
+    </details>
+    <details>
+      <summary>Are there costs on top of your fee?</summary>
+      <p>Yes — two costs go directly to other parties, not to Mommy Di: the US visa application fee (US$185, about ₱11,470) paid to the US Embassy, and a ₱750 delivery fee to 2GO once your visa is approved. The assistance fee above covers guidance and service only.</p>
+    </details>
+    <details>
+      <summary>I already filed my own DS-160 — can you still help?</summary>
+      <p>Yes, that's what Coaching Only (₱3,500) is for: a review of your DS-160, flags on anything that needs editing, and mock interview practice. It's built for DIY applicants, not for applicants currently working with a travel agency.</p>
+    </details>
+    <details>
+      <summary>Can you guarantee my visa will be approved?</summary>
+      <p>No one can guarantee a visa outcome — that decision belongs solely to the US Embassy. What this service does is help you avoid common red flags, build an honest and clear narrative, and prepare thoroughly for your interview to give you the strongest possible chance.</p>
+    </details>
+    <details>
+      <summary>What happens right after I book?</summary>
+      <p>My team reaches out to start drafting your application and setting up your scheduling account. From there, we hold your one-on-one strategy call so I can personally review your application and help position it in the best way.</p>
+    </details>
+    <details>
+      <summary>What are the requirements I need to prepare?</summary>
+      <p>The US Embassy doesn't actually require you to submit any documents for a tourist visa application — you only need a valid passport to apply. Supporting documents like a Certificate of Employment, payslips, ITR, or proof of business and income aren't required to be submitted; they're just recommended to bring with you to the interview, in case the consul asks to see them.</p>
+    </details>
+    <details>
+      <summary>Where do we process everything — is there a face-to-face meeting?</summary>
+      <p>Everything is processed online with my team, and all your information is kept private and confidential. Our calls are done over WhatsApp, Viber, or Google Meet — there's no face-to-face meeting required.</p>
+    </details>
+
+    <p class="disclaimer">Visa approval decisions are made solely by the U.S. Embassy. This service provides preparation, strategy, and coaching — it does not guarantee a specific outcome.</p>
+  </section>
+
+  <section>
+    <div class="cta-band">
+      <h2>Ready to start your application?</h2>
+      <p>Book a one-on-one strategy call and let's get your DS-160, interview prep, and mock interview underway.</p>
+      <button type="button" class="btn" onclick="openPayment()">Book a Strategy Call</button>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    Mommy Di Visa Assistance Center — US B1/B2 Tourist Visa Consulting · <a href="mailto:travel.igotyou@gmail.com">travel.igotyou@gmail.com</a> · <a href="https://web.facebook.com/profile.php?id=61573767958529&sk=reviews" target="_blank" rel="noopener">Facebook</a> · <a href="https://www.tiktok.com/@mommydiii" target="_blank" rel="noopener">TikTok</a>
+  </div>
+</footer>
+
+<dialog id="paymentModal" aria-labelledby="modalTitle">
+  <div class="modal-inner">
+    <button type="button" class="modal-close" onclick="closePayment()" aria-label="Close">×</button>
+
+    <div class="step-tracker" aria-hidden="true">
+      <span class="step-dot" id="dot1"></span>
+      <span class="step-line"></span>
+      <span class="step-dot" id="dot2"></span>
+      <span class="step-line"></span>
+      <span class="step-dot" id="dot3"></span>
+      <span class="step-line"></span>
+      <span class="step-dot" id="dot4"></span>
+    </div>
+
+    <!-- STEP 1: Quote form -->
+    <div class="modal-step" id="step1">
+      <span class="eyebrow">Step 1 of 4 · Get Your Quote</span>
+      <h2 id="modalTitle">Let's get your quote</h2>
+      <p class="modal-sub">Tell us a bit about your application so we can prepare your quotation.</p>
+
+      <div class="q-block">
+        <span class="field-label">Which service do you need?</span>
+        <div class="pkg-picker" role="radiogroup" aria-label="Choose your service">
+          <label class="pkg-pill"><input type="radio" name="svc" value="full" checked onchange="toggleRefusedField()"> Full Package (DS-160 + Strategy + Mock Interview)</label>
+          <label class="pkg-pill"><input type="radio" name="svc" value="coach" onchange="toggleRefusedField()"> Coaching Only (DS-160 Review + Mock Interview)</label>
+        </div>
+        <p class="coaching-note" id="coachNote" hidden>"I will make my own DS-160 and schedule my own interview. I just need help with reviewing my DS-160 and with the mock interview."</p>
+      </div>
+
+      <div class="form-grid">
+        <label class="form-field">
+          <span class="field-label">Full Name</span>
+          <input type="text" id="clientName" placeholder="Juan Dela Cruz">
+        </label>
+        <label class="form-field">
+          <span class="field-label">Target Travel Date</span>
+          <input type="date" id="travelDate">
+        </label>
+        <label class="form-field">
+          <span class="field-label">Adult Applicants</span>
+          <input type="number" id="numAdults" min="1" value="1" onchange="clampRefusedField()">
+        </label>
+        <label class="form-field">
+          <span class="field-label">Minors Below 18</span>
+          <input type="number" id="numMinors" min="0" value="0">
+        </label>
+        <label class="form-field" id="refusedField">
+          <span class="field-label">Of those adults, how many have been refused before?</span>
+          <input type="number" id="numRefused" min="0" value="0" onchange="clampRefusedField()">
+        </label>
+      </div>
+      <p class="form-error" id="formError" hidden>Please enter your name, target travel date, and at least 1 adult applicant.</p>
+
+      <div class="modal-actions">
+        <button type="button" class="btn btn-ghost" onclick="closePayment()">Cancel</button>
+        <button type="button" class="btn" onclick="goToStep2()">Get Quote &amp; See Available Schedule</button>
+      </div>
+    </div>
+
+    <!-- STEP 2: Quote + availability -->
+    <div class="modal-step" id="step2" hidden>
+      <span class="eyebrow">Step 2 of 4 · Your Quote &amp; Schedule</span>
+      <h2>Here's your quote &amp; earliest schedule, <span id="qClientName">there</span></h2>
+      <p class="modal-sub">For <span id="qPkgName">New Application</span> · target travel date <span id="qTravelDate">—</span></p>
+
+      <div class="quote-box">
+        <div class="quote-line" id="qAdultsNewRow">
+          <span id="qAdultsNewLine">1 adult × ₱5,290</span>
+          <span id="qAdultsNewAmount" class="mono">₱5,290</span>
+        </div>
+        <div class="quote-line" id="qAdultsReappRow" hidden>
+          <span id="qAdultsReappLine">0 adults (reapplication) × ₱5,690</span>
+          <span id="qAdultsReappAmount" class="mono">₱0</span>
+        </div>
+        <div class="quote-line" id="qMinorsRow" hidden>
+          <span id="qMinorsLine">0 minors × ₱3,000</span>
+          <span id="qMinorsAmount" class="mono">₱0</span>
+        </div>
+        <div class="quote-line quote-subtotal">
+          <span>Subtotal</span>
+          <span id="qSubtotal" class="mono">₱5,290</span>
+        </div>
+        <div class="quote-line quote-discount" id="qDiscountRow" hidden>
+          <span>Group discount (10%, 3+ applicants)</span>
+          <span id="qDiscountAmount" class="mono">−₱0</span>
+        </div>
+        <div class="quote-line quote-total">
+          <span>Total Due</span>
+          <span id="qTotal" class="mono">₱5,290</span>
+        </div>
+      </div>
+
+      <div class="avail-box">
+        <h4>Mommy Di's Earliest Open Slots for Your Strategy Call</h4>
+        <p>Based on her live Calendly calendar, her next open times are:</p>
+        <ul>
+          <li><strong>Thu, Nov 5, 2026</strong> — 3:00 PM (Manila time)</li>
+          <li><strong>Fri, Nov 6, 2026</strong> — 2:00 PM &amp; 3:00 PM (Manila time)</li>
+          <li><strong>Mon, Nov 9, 2026</strong> — 2:00 PM, 4:00 PM &amp; 5:00 PM (Manila time)</li>
+        </ul>
+        <p class="avail-note">Snapshot of Mommy Di's calendar as of Sep 11, 2026 — slots are limited and fill on a first-paid, first-booked basis, so more openings may appear closer to your date. You'll pick your exact day and time on Calendly once your payment is confirmed.</p>
+      </div>
+
+      <div class="modal-actions">
+        <button type="button" class="btn btn-ghost" onclick="showStep(1)">Back</button>
+        <button type="button" class="btn" onclick="goToStep3()">Continue to Payment</button>
+      </div>
+    </div>
+
+    <!-- STEP 3: Payment -->
+    <div class="modal-step" id="step3" hidden>
+      <span class="eyebrow">Step 3 of 4 · Payment</span>
+      <h2>Let's reserve your slot</h2>
+      <p class="modal-sub">Pay using GCash or Union Bank below, then attach your payment screenshot — once it's attached, you'll be able to book your call on Calendly.</p>
+
+      <div class="modal-amount-row">
+        <span id="modalPkgName">New Application</span>
+        <strong id="modalAmount" class="mono">₱5,290</strong>
+      </div>
+
+      <div class="pay-methods">
+        <div class="pay-card">
+          <h4>GCash</h4>
+          <div class="pay-field">
+            <div>
+              <span class="label">Number</span>
+              <span class="value mono">0969 206 1498</span>
+            </div>
+            <button type="button" class="copy-btn" onclick="copyText('09692061498', this)">Copy</button>
+          </div>
+          <div class="pay-field">
+            <div>
+              <span class="label">Account Name</span>
+              <span class="value">Dianne Marie Santos</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pay-card">
+          <h4>Union Bank</h4>
+          <div class="pay-field">
+            <div>
+              <span class="label">Account Number</span>
+              <span class="value mono">1025 2003 4906</span>
+            </div>
+            <button type="button" class="copy-btn" onclick="copyText('102520034906', this)">Copy</button>
+          </div>
+          <div class="pay-field">
+            <div>
+              <span class="label">Account Name</span>
+              <span class="value">Dianne Marie Santos</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="proof-box">
+        <h4>Attach Your Payment Screenshot</h4>
+        <p>Upload a screenshot of your GCash or Union Bank payment confirmation for total paid (<strong id="proofTotal">₱5,290</strong>).</p>
+        <label class="file-drop" id="fileDrop" for="paymentProof">
+          <span class="file-drop-label" id="proofFileLabel">No screenshot attached yet</span>
+          <span class="file-drop-btn">Choose Screenshot</span>
+          <input type="file" id="paymentProof" accept="image/*" onchange="handleProofUpload(event)">
+        </label>
+        <p class="proof-confirm" id="proofConfirmMsg" hidden>✓ Screenshot attached</p>
+      </div>
+
+      <div class="form-grid">
+        <label class="form-field">
+          <span class="field-label">Viber / WhatsApp Number (optional)</span>
+          <input type="text" id="clientContact" placeholder="0949 325 9411" oninput="clearStep3Error()">
+        </label>
+        <label class="form-field">
+          <span class="field-label">Email Address (optional)</span>
+          <input type="email" id="clientEmail" placeholder="you@email.com" oninput="clearStep3Error()">
+        </label>
+      </div>
+
+      <div class="proof-box">
+        <h4>Also Message Us Your Proof</h4>
+        <p>For the fastest confirmation, please also send your payment screenshot along with your name and target travel date via Viber or WhatsApp:</p>
+        <div class="proof-links">
+          <a class="btn btn-ghost btn-block" href="viber://chat?number=%2B639493259411">Message via Viber · +63 949 325 9411</a>
+          <a class="btn btn-ghost btn-block" href="https://wa.me/639493259411">Message via WhatsApp · +63 949 325 9411</a>
+        </div>
+      </div>
+
+      <p class="avail-note">Once your payment and booked schedule are confirmed, we'll send your confirmation via Viber/WhatsApp. Please book only 1 call slot per family / application group.</p>
+      <p class="form-error" id="step3Error" hidden></p>
+
+      <div class="modal-actions">
+        <button type="button" class="btn btn-ghost" onclick="showStep(2)">Back</button>
+        <button type="button" id="continueBtn" class="btn" onclick="attemptContinue()">Continue to Book</button>
+      </div>
+    </div>
+
+    <!-- STEP 4: Book on Calendly -->
+    <div class="modal-step" id="step4" hidden>
+      <span class="eyebrow">Step 4 of 4 · Book Your Call</span>
+      <h2>You're all set!</h2>
+      <div class="proof-box">
+        <p style="margin-bottom:0;">You may now book your strategy call with Mommy Di. This booking will be confirmed as soon as your payment is confirmed by our team. Once confirmed, our team will reach out to send the next steps so we can start preparing your US visa application.</p>
+      </div>
+
+      <div class="modal-actions">
+        <button type="button" class="btn btn-ghost" onclick="showStep(3)">Back</button>
+        <a href="https://calendly.com/travel-igotyou/visa-assistance-1-on-1-with-mommy-di?back=1&amp;month=2026-09" target="_blank" rel="noopener" class="btn" onclick="closePayment()">Book Your Strategy Call</a>
+      </div>
+    </div>
+  </div>
+</dialog>
+
+<script>
+  var PACKAGE_RATES = { new: 5290, reapp: 5690, coach: 3500 };
+  var PACKAGE_LABELS = { new: 'New Application', reapp: 'Reapplication', coach: 'Coaching Only' };
+  var MINOR_RATE = 3000;
+  var GROUP_DISCOUNT_MIN = 3;
+  var CALENDLY_URL = 'https://calendly.com/travel-igotyou/visa-assistance-1-on-1-with-mommy-di';
+
+  function peso(n) {
+    return '₱' + Math.round(n).toLocaleString('en-PH');
+  }
+
+  function formatDate(iso) {
+    if (!iso) return '—';
+    try {
+      var d = new Date(iso + 'T00:00:00');
+      return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+    } catch (e) {
+      return iso;
+    }
+  }
+
+  function getSelectedSvc() {
+    var svcChecked = document.querySelector('input[name="svc"]:checked');
+    return svcChecked ? svcChecked.value : 'full';
+  }
+
+  function toggleRefusedField() {
+    var isCoach = (getSelectedSvc() === 'coach');
+    document.getElementById('coachNote').hidden = !isCoach;
+  }
+
+  function clampRefusedField() {
+    var adults = Math.max(1, parseInt(document.getElementById('numAdults').value, 10) || 0);
+    var refusedInput = document.getElementById('numRefused');
+    var refused = Math.max(0, parseInt(refusedInput.value, 10) || 0);
+    if (refused > adults) refusedInput.value = adults;
+  }
+
+  function showStep(n) {
+    [1, 2, 3, 4].forEach(function (i) {
+      document.getElementById('step' + i).hidden = (i !== n);
+      var dot = document.getElementById('dot' + i);
+      if (dot) dot.classList.toggle('step-dot-active', i <= n);
+    });
+  }
+
+  function openPayment(pkg) {
+    var svcFull = document.querySelector('input[name="svc"][value="full"]');
+    var svcCoach = document.querySelector('input[name="svc"][value="coach"]');
+    document.getElementById('clientName').value = '';
+    document.getElementById('travelDate').value = '';
+    document.getElementById('numAdults').value = '1';
+    document.getElementById('numMinors').value = '0';
+    if (pkg === 'coach') {
+      svcCoach.checked = true;
+      document.getElementById('numRefused').value = '0';
+    } else if (pkg === 'reapp') {
+      svcFull.checked = true;
+      document.getElementById('numRefused').value = '1';
+    } else {
+      svcFull.checked = true;
+      document.getElementById('numRefused').value = '0';
+    }
+    toggleRefusedField();
+    document.getElementById('formError').hidden = true;
+    document.getElementById('paymentProof').value = '';
+    document.getElementById('proofFileLabel').textContent = 'No screenshot attached yet';
+    document.getElementById('proofConfirmMsg').hidden = true;
+    document.getElementById('fileDrop').classList.remove('has-file');
+    document.getElementById('clientContact').value = '';
+    document.getElementById('clientEmail').value = '';
+    clearStep3Error();
+    showStep(1);
+    var dialog = document.getElementById('paymentModal');
+    try {
+      if (typeof dialog.showModal === 'function') {
+        dialog.showModal();
+      } else {
+        dialog.setAttribute('open', '');
+      }
+    } catch (e) {
+      dialog.setAttribute('open', '');
+    }
+  }
+
+  function closePayment() {
+    var dialog = document.getElementById('paymentModal');
+    try {
+      if (typeof dialog.close === 'function') {
+        dialog.close();
+      } else {
+        dialog.removeAttribute('open');
+      }
+    } catch (e) {
+      dialog.removeAttribute('open');
+    }
+  }
+
+  function computeQuote() {
+    var svc = getSelectedSvc();
+    var adults = Math.max(1, parseInt(document.getElementById('numAdults').value, 10) || 0);
+    var minors = Math.max(0, parseInt(document.getElementById('numMinors').value, 10) || 0);
+    var refusedInput = Math.max(0, parseInt(document.getElementById('numRefused').value, 10) || 0);
+    var numRefused = svc === 'coach' ? 0 : Math.min(refusedInput, adults);
+    var numNew = adults - numRefused;
+
+    var newTotal, reappTotal, adultsTotal;
+    if (svc === 'coach') {
+      newTotal = adults * PACKAGE_RATES.coach;
+      reappTotal = 0;
+      adultsTotal = newTotal;
+    } else {
+      newTotal = numNew * PACKAGE_RATES.new;
+      reappTotal = numRefused * PACKAGE_RATES.reapp;
+      adultsTotal = newTotal + reappTotal;
+    }
+    var minorsTotal = minors * MINOR_RATE;
+    var subtotal = adultsTotal + minorsTotal;
+    var totalPeople = adults + minors;
+    var discount = totalPeople >= GROUP_DISCOUNT_MIN ? subtotal * 0.10 : 0;
+    var total = subtotal - discount;
+    return { svc: svc, adults: adults, minors: minors, numNew: numNew, numRefused: numRefused, newTotal: newTotal, reappTotal: reappTotal, adultsTotal: adultsTotal, minorsTotal: minorsTotal, subtotal: subtotal, discount: discount, total: total, totalPeople: totalPeople };
+  }
+
+  function goToStep2() {
+    var name = document.getElementById('clientName').value.trim();
+    var travel = document.getElementById('travelDate').value;
+    var adults = parseInt(document.getElementById('numAdults').value, 10) || 0;
+    var err = document.getElementById('formError');
+    if (!name || !travel || adults < 1) {
+      err.hidden = false;
+      return;
+    }
+    err.hidden = true;
+    renderQuote();
+    showStep(2);
+  }
+
+  function goToStep3() {
+    renderQuote();
+    showStep(3);
+  }
+
+  function renderQuote() {
+    var q = computeQuote();
+    var name = document.getElementById('clientName').value.trim();
+    var travel = document.getElementById('travelDate').value;
+    var svcLabel = q.svc === 'coach' ? 'Coaching Only' : 'Full Package';
+
+    document.getElementById('qClientName').textContent = name || 'there';
+    document.getElementById('qPkgName').textContent = svcLabel;
+    document.getElementById('qTravelDate').textContent = formatDate(travel);
+
+    var newRow = document.getElementById('qAdultsNewRow');
+    var reappRow = document.getElementById('qAdultsReappRow');
+    if (q.svc === 'coach') {
+      newRow.hidden = false;
+      document.getElementById('qAdultsNewLine').textContent = q.adults + ' adult' + (q.adults === 1 ? '' : 's') + ' × ' + peso(PACKAGE_RATES.coach);
+      document.getElementById('qAdultsNewAmount').textContent = peso(q.newTotal);
+      reappRow.hidden = true;
+    } else {
+      if (q.numNew > 0) {
+        newRow.hidden = false;
+        document.getElementById('qAdultsNewLine').textContent = q.numNew + ' adult' + (q.numNew === 1 ? '' : 's') + ', new application × ' + peso(PACKAGE_RATES.new);
+        document.getElementById('qAdultsNewAmount').textContent = peso(q.newTotal);
+      } else {
+        newRow.hidden = true;
+      }
+      if (q.numRefused > 0) {
+        reappRow.hidden = false;
+        document.getElementById('qAdultsReappLine').textContent = q.numRefused + ' adult' + (q.numRefused === 1 ? '' : 's') + ', reapplication × ' + peso(PACKAGE_RATES.reapp);
+        document.getElementById('qAdultsReappAmount').textContent = peso(q.reappTotal);
+      } else {
+        reappRow.hidden = true;
+      }
+    }
+
+    var minorsRow = document.getElementById('qMinorsRow');
+    if (q.minors > 0) {
+      minorsRow.hidden = false;
+      document.getElementById('qMinorsLine').textContent = q.minors + ' minor' + (q.minors === 1 ? '' : 's') + ' below 18 × ' + peso(MINOR_RATE);
+      document.getElementById('qMinorsAmount').textContent = peso(q.minorsTotal);
+    } else {
+      minorsRow.hidden = true;
+    }
+
+    document.getElementById('qSubtotal').textContent = peso(q.subtotal);
+
+    var discRow = document.getElementById('qDiscountRow');
+    if (q.discount > 0) {
+      discRow.hidden = false;
+      document.getElementById('qDiscountAmount').textContent = '−' + peso(q.discount);
+    } else {
+      discRow.hidden = true;
+    }
+
+    document.getElementById('qTotal').textContent = peso(q.total);
+
+    document.getElementById('modalPkgName').textContent = svcLabel + ' — ' + q.totalPeople + ' applicant' + (q.totalPeople === 1 ? '' : 's');
+    document.getElementById('modalAmount').textContent = peso(q.total);
+    document.getElementById('proofTotal').textContent = peso(q.total);
+  }
+
+  function handleProofUpload(event) {
+    var files = event.target.files;
+    var label = document.getElementById('proofFileLabel');
+    var confirmMsg = document.getElementById('proofConfirmMsg');
+    var drop = document.getElementById('fileDrop');
+    if (files && files.length > 0) {
+      label.textContent = files[0].name;
+      confirmMsg.hidden = false;
+      drop.classList.add('has-file');
+    } else {
+      label.textContent = 'No screenshot attached yet';
+      confirmMsg.hidden = true;
+      drop.classList.remove('has-file');
+    }
+    clearStep3Error();
+  }
+
+  function clearStep3Error() {
+    var errEl = document.getElementById('step3Error');
+    if (errEl) errEl.hidden = true;
+  }
+
+  function attemptContinue() {
+    var hasFile = document.getElementById('paymentProof').files.length > 0;
+    var errEl = document.getElementById('step3Error');
+    if (!hasFile) {
+      errEl.textContent = 'Please attach your payment screenshot before continuing.';
+      errEl.hidden = false;
+      return;
+    }
+    errEl.hidden = true;
+    showStep(4);
+  }
+
+  function copyText(text, btn) {
+    var original = btn.textContent;
+    function done() {
+      btn.textContent = 'Copied';
+      setTimeout(function () { btn.textContent = original; }, 1500);
+    }
+    function fallback() {
+      try {
+        var ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+        done();
+      } catch (e) { /* clipboard unavailable; ignore */ }
+    }
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done).catch(fallback);
+      } else {
+        fallback();
+      }
+    } catch (e) {
+      fallback();
+    }
+  }
+
+
+</script>
