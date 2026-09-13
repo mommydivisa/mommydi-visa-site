@@ -1119,6 +1119,40 @@
   @media (max-width:640px){
     .footer-top{flex-direction:column; gap:22px;}
   }
+
+  /* Messenger chat button */
+  .chat-fab{
+    position:fixed;
+    bottom:24px;
+    right:24px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    background:linear-gradient(135deg,#00B2FF,#006AFF 55%,#B900FF 100%);
+    color:#FFFFFF;
+    text-decoration:none;
+    padding:14px 22px 14px 14px;
+    border-radius:999px;
+    box-shadow:0 14px 32px -10px rgba(0,60,150,0.5);
+    z-index:999;
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .chat-fab:hover{transform:translateY(-3px); box-shadow:0 18px 38px -8px rgba(0,60,150,0.6);}
+  .chat-fab-icon{
+    display:flex; align-items:center; justify-content:center;
+    width:26px; height:26px; flex:none;
+  }
+  .chat-fab-icon svg{width:100%; height:100%;}
+  .chat-fab-label{
+    font-family:'Montserrat',sans-serif;
+    font-weight:700;
+    font-size:0.88rem;
+    white-space:nowrap;
+  }
+  @media (max-width:560px){
+    .chat-fab{padding:14px; border-radius:50%; bottom:18px; right:18px;}
+    .chat-fab-label{display:none;}
+  }
 </style>
 </head>
 <body>
@@ -2106,6 +2140,10 @@
   }
 
 
-</script>
+</script><a class="chat-fab" href="https://m.me/61573767958529" target="_blank" rel="noopener" aria-label="Chat with us on Messenger">
+  <span class="chat-fab-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v7A2.5 2.5 0 0 1 17.5 16H10l-4.5 4v-4H6.5A2.5 2.5 0 0 1 4 13.5v-7z"/><circle cx="8.5" cy="10" r="0.9" fill="currentColor" stroke="none"/><circle cx="12" cy="10" r="0.9" fill="currentColor" stroke="none"/><circle cx="15.5" cy="10" r="0.9" fill="currentColor" stroke="none"/></svg></span>
+  <span class="chat-fab-label">Chat with us</span>
+</a>
+
 </body>
 </html>
