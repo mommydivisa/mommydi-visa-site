@@ -21,22 +21,7 @@
     --gold:#E0A845;
     --shadow: 0 18px 40px -22px rgba(11,50,101,0.25);
   }
-  @media (prefers-color-scheme: dark){
-    :root:not([data-theme="light"]){
-      --bg:#0B1626;
-      --surface:#142640;
-      --surface-2:#1C3355;
-      --ink:#EAF3FA;
-      --ink-soft:#A9C0D6;
-      --border:#2A4A6B;
-      --primary:#6FA8DC;
-      --primary-ink:#071019;
-      --accent:#E8577D;
-      --accent-ink:#FFFFFF;
-      --gold:#E8C273;
-      --shadow: 0 18px 44px -20px rgba(0,0,0,0.6);
-    }
-  }
+  /* Auto dark-mode (prefers-color-scheme) disabled by request — site always shows the light palette below. */
   :root[data-theme="dark"]{
     --bg:#0B1626;
     --surface:#142640;
@@ -205,8 +190,12 @@
     text-decoration:none;
   }
   .topbar-contact a:hover{color:var(--accent);}
+  .sms-row{ display:contents; }
+  .sms-sep{ display:none; }
   @media (max-width:560px){
     .topbar-contact{align-items:flex-start; text-align:left;}
+    .sms-row{ display:flex; align-items:center; gap:6px; flex-wrap:wrap; }
+    .sms-sep{ display:inline; color:var(--ink-soft); }
   }
   .btn{
     display:inline-flex;
@@ -756,6 +745,13 @@
     border-radius:8px;
     padding:12px 16px;
   }
+  .slot-note{
+    margin:8px 0 0;
+    font-family:'Montserrat',sans-serif;
+    font-weight:600;
+    font-size:0.82rem;
+    color:var(--accent);
+  }
 
   /* faq */
   details{
@@ -1157,8 +1153,11 @@
     </nav>
     <div class="topbar-contact">
       <span class="contact-label">Contact Us</span>
-      <a href="sms:09175663287">SMS: 0917 566 3287</a>
-      <a href="sms:09692061498">0969 206 1498</a>
+      <span class="sms-row">
+        <a href="sms:09175663287">SMS: 0917 566 3287</a>
+        <span class="sms-sep">|</span>
+        <a href="sms:09692061498">0969 206 1498</a>
+      </span>
       <a href="mailto:travel.igotyou@gmail.com">travel.igotyou@gmail.com</a>
     </div>
   </div>
@@ -1361,7 +1360,7 @@
       </div>
       <div style="flex:1; min-width:220px;">
         <h4>Paid to Other Parties</h4>
-        <div class="cost-line"><span>US visa application fee <span class="to">→ US Embassy</span></span><span class="mono">US$185 (~₱11,470)</span></div>
+        <div class="cost-line"><span>US visa application fee <span class="to">→ US Embassy</span></span><span class="mono">US$185 (~₱11,840)</span></div>
         <div class="cost-line"><span>Delivery of approved visa <span class="to">→ 2GO</span></span><span class="mono">₱750</span></div>
       </div>
     </div>
@@ -1376,7 +1375,7 @@
     <div class="steps">
       <div class="step">
         <div class="step-num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><circle cx="12" cy="12" r="9"/><path d="M9 8h4a2 2 0 1 1 0 4H9m0 0h4a2 2 0 1 1 0 4H9M9 8v8"/></svg></div>
-        <div><span class="step-eyebrow">Step 1</span><h3>Reserve your slot</h3><p>Pay the assistance fee via GCash or Union Bank to lock in your booking — this covers your DS-160 preparation, scheduling account setup, biometrics and interview scheduling, document collation, script writing, and one mock interview.</p></div>
+        <div><span class="step-eyebrow">Step 1</span><h3>Reserve your slot</h3><p>Pay the assistance fee via GCash or Union Bank to lock in your booking — this covers your DS-160 preparation, scheduling account setup, biometrics and interview scheduling, document collation, script writing, and one mock interview.</p><p class="slot-note">My earliest availability is Wednesday, October 14, 2:00 PM.</p></div>
       </div>
       <div class="step-flow"><span class="step-flow-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M12 5v14M6 13l6 6 6-6"/></svg></span></div>
       <div class="step">
@@ -1445,7 +1444,7 @@
     </details>
     <details>
       <summary>Are there costs on top of your fee?</summary>
-      <p>Yes — two costs go directly to other parties, not to Mommy Di: the US visa application fee (US$185, about ₱11,470) paid to the US Embassy, and a ₱750 delivery fee to 2GO once your visa is approved. The assistance fee above covers guidance and service only.</p>
+      <p>Yes — two costs go directly to other parties, not to Mommy Di: the US visa application fee (US$185, about ₱11,840) paid to the US Embassy, and a ₱750 delivery fee to 2GO once your visa is approved. The assistance fee above covers guidance and service only.</p>
     </details>
     <details>
       <summary>I already filed my own DS-160 — can you still help?</summary>
