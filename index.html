@@ -752,6 +752,14 @@
     font-size:0.82rem;
     color:var(--accent);
   }
+  .slot-live-link{
+    color:var(--accent);
+    text-decoration:none;
+    border-bottom:1px dashed var(--accent);
+    cursor:pointer;
+  }
+  .slot-live-link:hover{color:var(--primary); border-bottom-color:var(--primary);}
+  .slot-next{color:var(--ink-soft); font-weight:600;}
 
   /* faq */
   details{
@@ -1409,7 +1417,7 @@
     <div class="steps">
       <div class="step">
         <div class="step-num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><circle cx="12" cy="12" r="9"/><path d="M9 8h4a2 2 0 1 1 0 4H9m0 0h4a2 2 0 1 1 0 4H9M9 8v8"/></svg></div>
-        <div><span class="step-eyebrow">Step 1</span><h3>Reserve your slot</h3><p>Pay the assistance fee via GCash or Union Bank to lock in your booking — this covers your DS-160 preparation, scheduling account setup, biometrics and interview scheduling, document collation, script writing, and one mock interview.</p><p class="slot-note">My earliest availability is Wednesday, October 14, 2:00 PM.</p></div>
+        <div><span class="step-eyebrow">Step 1</span><h3>Reserve your slot</h3><p>Pay the assistance fee via GCash or Union Bank to lock in your booking — this covers your DS-160 preparation, scheduling account setup, biometrics and interview scheduling, document collation, script writing, and one mock interview.</p><p class="slot-note"><span class="slot-next"><!-- PROCESS_AVAILABILITY:START (auto-updated hourly — do not hand-edit) -->Next opening: Thu, Nov 5, 2026 — 3:00 PM (Manila time)<!-- PROCESS_AVAILABILITY:END --></span> &middot; <a href="#" class="slot-live-link" onclick="openPayment('new'); return false;">Reserve now &rarr;</a></p></div>
       </div>
       <div class="step-flow"><span class="step-flow-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M12 5v14M6 13l6 6 6-6"/></svg></span></div>
       <div class="step">
@@ -1642,12 +1650,14 @@
       <div class="avail-box">
         <h4>Mommy Di's Earliest Open Slots for Your Strategy Call</h4>
         <p>Based on her live Calendly calendar, her next open times are:</p>
+        <!-- AVAILABILITY:START (auto-updated hourly by .github/workflows/update-availability.yml — do not hand-edit) -->
         <ul>
-          <li><strong>Thu, Oct 8, 2026</strong> — 4:00 PM (Manila time)</li>
-          <li><strong>Wed, Oct 14, 2026</strong> — 2:00 PM (Manila time)</li>
-          <li><strong>Wed, Oct 21, 2026</strong> — 2:00 PM &amp; 3:00 PM (Manila time)</li>
+          <li><strong>Thu, Nov 5, 2026</strong> — 3:00 PM (Manila time)</li>
+          <li><strong>Fri, Nov 6, 2026</strong> — 2:00 PM &amp; 3:00 PM (Manila time)</li>
+          <li><strong>Mon, Nov 9, 2026</strong> — 2:00 PM &amp; 5:00 PM (Manila time)</li>
         </ul>
-        <p class="avail-note">Snapshot of Mommy Di's calendar as of Sep 12, 2026 — slots are limited and fill on a first-paid, first-booked basis, so more openings may appear closer to your date. You'll pick your exact day and time on Calendly once your payment is confirmed.</p>
+        <p class="avail-note">Snapshot of Mommy Di's calendar as of Sep 14, 2026, 3:40 PM (Manila time) — slots are limited and fill on a first-paid, first-booked basis, so more openings may appear closer to your date. You'll pick your exact day and time on Calendly once your payment is confirmed.</p>
+        <!-- AVAILABILITY:END -->
       </div>
 
       <div class="modal-actions">
