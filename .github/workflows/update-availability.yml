@@ -1,0 +1,39 @@
+name: Update Calendly availability
+
+on:
+  schedule:
+    # Runs at the top of every hour (UTC). GitHub may delay this by a
+    # few minutes during busy periods — that's normal for scheduled Actions.
+    - cron: '0 * * * *'
+  workflow_dispatch: {}   # lets you trigger it manually from the Actions tab
+
+permissions:
+  contents: write
+
+jobs:
+  update-availability:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Fetch latest Calendly availability and update index.html
+        env:
+          CALENDLY_TOKEN: ${{ secrets.CALENDLY_TOKEN }}
+        run: python scripts/update_availability.py
+
+      - name: Commit and push if index.html changed
+        run: |
+          git config user.name "calendly-availability-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add index.html
+          git diff --cached --quiet || git commit -m "Auto-update Calendly availability snapshot"
+          git push
