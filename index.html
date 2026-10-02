@@ -869,61 +869,10 @@
   }
   .pkg-pill input{accent-color:var(--accent); margin:0;}
   .pkg-pill:has(input:checked){border-color:var(--accent); color:var(--accent); font-weight:600;}
-  .modal-amount-row{
-    display:flex; justify-content:space-between; align-items:center;
-    margin-top:18px; padding:14px 16px;
-    background:var(--surface-2); border-radius:12px;
-    font-size:0.95rem;
-  }
-  .modal-amount-row strong{font-size:1.2rem; color:var(--primary);}
-  .pay-methods{display:flex; flex-direction:column; gap:12px; margin-top:20px;}
-  .pay-card{border:1px solid var(--border); border-radius:12px; padding:14px 16px;}
-  .pay-card h4{
-    font-family:'Montserrat',sans-serif; font-weight:600; font-size:0.68rem; letter-spacing:.1em;
-    text-transform:uppercase; color:var(--ink-soft); margin:0 0 10px;
-  }
-  .pay-field{display:flex; justify-content:space-between; align-items:center; gap:12px; padding-block:5px;}
-  .pay-field .label{display:block; font-size:0.68rem; color:var(--ink-soft); letter-spacing:.04em; text-transform:uppercase; margin-bottom:2px;}
-  .pay-field .value{font-size:0.95rem; font-weight:600;}
-  .copy-btn{
-    border:1px solid var(--border); background:transparent; color:var(--ink);
-    border-radius:8px; padding:6px 12px; font-size:0.75rem; cursor:pointer; flex:none;
-    font-family:'Montserrat',sans-serif; font-weight:600;
-  }
-  .copy-btn:hover{border-color:var(--accent); color:var(--accent);}
   .proof-box{margin-top:18px; background:var(--surface-2); border-radius:12px; padding:16px;}
   .proof-box h4{margin:0 0 6px; font-size:0.95rem; font-family:'Montserrat',sans-serif; font-weight:700;}
   .proof-box p{margin:0 0 12px; font-size:0.88rem; color:var(--ink-soft);}
-  .proof-links{display:flex; flex-direction:column; gap:4px;}
-  .proof-number{
-    margin:0;
-    font-family:'Montserrat',sans-serif; font-weight:600;
-    font-size:0.9rem;
-    font-weight:600;
-    color:var(--primary);
-  }
-  .confirm-row{
-    display:flex; align-items:flex-start; gap:10px;
-    margin-top:20px; font-size:0.9rem; cursor:pointer;
-  }
-  .confirm-row input{margin-top:3px; accent-color:var(--accent); width:18px; height:18px; flex:none;}
   .modal-actions{display:flex; justify-content:flex-end; gap:10px; margin-top:20px; flex-wrap:wrap;}
-
-  .file-drop{
-    display:flex; align-items:center; justify-content:space-between; gap:12px;
-    border:1.5px dashed var(--border); border-radius:10px; padding:12px 14px;
-    cursor:pointer; background:var(--surface);
-  }
-  .file-drop:hover{border-color:var(--accent);}
-  .file-drop.has-file{border-style:solid; border-color:var(--accent);}
-  .file-drop input[type="file"]{position:absolute; width:1px; height:1px; opacity:0; overflow:hidden;}
-  .file-drop-label{font-size:0.88rem; color:var(--ink-soft); overflow-wrap:anywhere;}
-  .file-drop-btn{
-    border:1px solid var(--border); background:transparent; color:var(--ink);
-    border-radius:8px; padding:6px 12px; font-size:0.75rem; cursor:pointer; flex:none;
-    font-family:'Montserrat',sans-serif; font-weight:600;
-  }
-  .proof-confirm{color:var(--accent); font-size:0.85rem; font-weight:600; margin:10px 0 0;}
 
   .step-tracker{display:flex; align-items:center; gap:6px; margin-bottom:18px;}
   .step-dot{width:9px; height:9px; border-radius:50%; background:var(--border); flex:none;}
@@ -1393,7 +1342,7 @@
       </div>
     </div>
 
-    <p class="price-note" style="margin-top:20px;">Coaching Only is for applicants who prepared (or are preparing) their own application and are not currently working with a travel agency. Rates are per applicant — groups of 3 or more get 10% off, and applicants below 18 are a flat ₱3,000 each. Get an exact quote when you book.</p>
+    <p class="price-note" style="margin-top:20px;">Coaching Only is for applicants who prepared (or are preparing) their own application and are not currently working with a travel agency. Rates are per applicant — groups of 3 or more get 5% off the adult rate, and applicants below 18 are a flat ₱3,000 each with no additional discount. Get an exact quote when you book.</p>
 
     <div class="other-costs">
       <div style="flex:1; min-width:220px;">
@@ -1417,7 +1366,7 @@
     <div class="steps">
       <div class="step">
         <div class="step-num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><circle cx="12" cy="12" r="9"/><path d="M9 8h4a2 2 0 1 1 0 4H9m0 0h4a2 2 0 1 1 0 4H9M9 8v8"/></svg></div>
-        <div><span class="step-eyebrow">Step 1</span><h3>Reserve your slot</h3><p>Pay the assistance fee via GCash or Union Bank to lock in your booking — this covers your DS-160 preparation, scheduling account setup, biometrics and interview scheduling, document collation, script writing, and one mock interview.</p><p class="slot-note"><span class="slot-next"><!-- PROCESS_AVAILABILITY:START (auto-updated hourly — do not hand-edit) -->Next opening: Wed, Nov 18, 2026 — 3:00 PM (Manila time)<!-- PROCESS_AVAILABILITY:END --></span> &middot; <a href="#" class="slot-live-link" onclick="openPayment('new'); return false;">Reserve now &rarr;</a></p></div>
+        <div><span class="step-eyebrow">Step 1</span><h3>Reserve your slot</h3><p>Get your quote and message us to confirm your slot and lock in your booking — this covers your DS-160 preparation, scheduling account setup, biometrics and interview scheduling, document collation, script writing, and one mock interview.</p><p class="slot-note"><span class="slot-next"><!-- PROCESS_AVAILABILITY:START (auto-updated hourly — do not hand-edit) -->Next opening: Thu, Nov 5, 2026 — 3:00 PM (Manila time)<!-- PROCESS_AVAILABILITY:END --></span> &middot; <a href="#" class="slot-live-link" onclick="openPayment('new'); return false;">Reserve now &rarr;</a></p></div>
       </div>
       <div class="step-flow"><span class="step-flow-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M12 5v14M6 13l6 6 6-6"/></svg></span></div>
       <div class="step">
@@ -1563,15 +1512,11 @@
       <span class="step-dot" id="dot1"></span>
       <span class="step-line"></span>
       <span class="step-dot" id="dot2"></span>
-      <span class="step-line"></span>
-      <span class="step-dot" id="dot3"></span>
-      <span class="step-line"></span>
-      <span class="step-dot" id="dot4"></span>
     </div>
 
     <!-- STEP 1: Quote form -->
     <div class="modal-step" id="step1">
-      <span class="eyebrow">Step 1 of 4 · Get Your Quote</span>
+      <span class="eyebrow">Step 1 of 2 · Get Your Quote</span>
       <h2 id="modalTitle">Let's get your quote</h2>
       <p class="modal-sub">Tell us a bit about your application so we can prepare your quotation.</p>
 
@@ -1616,7 +1561,7 @@
 
     <!-- STEP 2: Quote + availability -->
     <div class="modal-step" id="step2" hidden>
-      <span class="eyebrow">Step 2 of 4 · Your Quote &amp; Schedule</span>
+      <span class="eyebrow">Step 2 of 2 · Your Quote &amp; Schedule</span>
       <h2>Here's your quote &amp; earliest schedule, <span id="qClientName">there</span></h2>
       <p class="modal-sub">For <span id="qPkgName">New Application</span> · target travel date <span id="qTravelDate">—</span></p>
 
@@ -1638,7 +1583,7 @@
           <span id="qSubtotal" class="mono">₱5,290</span>
         </div>
         <div class="quote-line quote-discount" id="qDiscountRow" hidden>
-          <span>Group discount (10%, 3+ applicants)</span>
+          <span>Group discount (5%, 3+ applicants)</span>
           <span id="qDiscountAmount" class="mono">−₱0</span>
         </div>
         <div class="quote-line quote-total">
@@ -1652,141 +1597,22 @@
         <p>Based on her live Calendly calendar, her next open times are:</p>
         <!-- AVAILABILITY:START (auto-updated hourly by .github/workflows/update-availability.yml — do not hand-edit) -->
         <ul>
-          <li><strong>Wed, Nov 18, 2026</strong> — 3:00 PM (Manila time)</li>
-          <li><strong>Mon, Nov 23, 2026</strong> — 2:00 PM &amp; 3:00 PM &amp; 5:00 PM (Manila time)</li>
-          <li><strong>Tue, Nov 24, 2026</strong> — 2:00 PM &amp; 3:00 PM &amp; 5:00 PM (Manila time)</li>
+          <li><strong>Thu, Nov 5, 2026</strong> — 3:00 PM (Manila time)</li>
+          <li><strong>Fri, Nov 6, 2026</strong> — 2:00 PM &amp; 3:00 PM (Manila time)</li>
+          <li><strong>Mon, Nov 9, 2026</strong> — 2:00 PM &amp; 5:00 PM (Manila time)</li>
         </ul>
-        <p class="avail-note">Snapshot of Mommy Di's calendar as of Oct 3, 2026, 2:13 AM (Manila time) — slots are limited and fill on a first-paid, first-booked basis, so more openings may appear closer to your date. You'll pick your exact day and time on Calendly once your payment is confirmed.</p>
+        <p class="avail-note">Snapshot of Mommy Di's calendar as of Sep 14, 2026, 3:40 PM (Manila time) — slots are limited and fill on a first-paid, first-booked basis, so more openings may appear closer to your date. You'll pick your exact day and time on Calendly once your payment is confirmed.</p>
         <!-- AVAILABILITY:END -->
+      </div>
+
+      <div class="proof-box">
+        <h4>Ready to lock in your slot?</h4>
+        <p>Tap the button below — we'll save a quote image to your device and open Messenger with your details already filled in. Just attach the image and hit send. Our team will confirm your availability, share our GCash / Union Bank details privately, and book your call with Mommy Di once your payment is confirmed.</p>
       </div>
 
       <div class="modal-actions">
         <button type="button" class="btn btn-ghost" onclick="showStep(1)">Back</button>
-        <button type="button" class="btn" onclick="goToStep3()">Continue to Payment</button>
-      </div>
-    </div>
-
-    <!-- STEP 3: Payment -->
-    <div class="modal-step" id="step3" hidden>
-      <span class="eyebrow">Step 3 of 4 · Payment</span>
-      <h2>Let's reserve your slot</h2>
-      <p class="modal-sub">Pay using GCash or Union Bank below, then attach your payment screenshot — once it's attached, you'll be able to book your call on Calendly.</p>
-
-      <div class="modal-amount-row">
-        <span id="modalPkgName">New Application</span>
-        <strong id="modalAmount" class="mono">₱5,290</strong>
-      </div>
-
-      <div class="pay-methods">
-        <div class="pay-card">
-          <h4>GCash</h4>
-          <div class="pay-field">
-            <div>
-              <span class="label">Number</span>
-              <span class="value mono">0969 206 1498</span>
-            </div>
-            <button type="button" class="copy-btn" onclick="copyText('09692061498', this)">Copy</button>
-          </div>
-          <div class="pay-field">
-            <div>
-              <span class="label">Account Name</span>
-              <span class="value">Dianne Marie Santos</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="pay-card">
-          <h4>Union Bank</h4>
-          <div class="pay-field">
-            <div>
-              <span class="label">Account Number</span>
-              <span class="value mono">1025 2003 4906</span>
-            </div>
-            <button type="button" class="copy-btn" onclick="copyText('102520034906', this)">Copy</button>
-          </div>
-          <div class="pay-field">
-            <div>
-              <span class="label">Account Name</span>
-              <span class="value">Dianne Marie Santos</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <form id="bookingForm" action="https://formsubmit.co/travel.igotyou@gmail.com" method="POST" enctype="multipart/form-data">
-        <input type="hidden" name="_subject" id="fsSubject" value="New Booking Submission">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_next" value="https://mommydi-visa-site.vercel.app/?booked=1">
-        <input type="hidden" name="_autoresponse" id="fsAutoresponse" value="">
-        <input type="hidden" name="_cc" id="fsCc" value="">
-        <input type="hidden" name="Main Applicant Name" id="fsMainName">
-        <input type="hidden" name="Target Travel Date" id="fsTravelDate">
-        <input type="hidden" name="Package" id="fsPackage">
-        <input type="hidden" name="Adult Applicants" id="fsAdults">
-        <input type="hidden" name="Minors Below 18" id="fsMinors">
-        <input type="hidden" name="Adults Previously Refused" id="fsRefused">
-        <input type="hidden" name="Total Quote" id="fsTotal">
-
-        <div class="proof-box">
-          <h4>Attach Your Payment Screenshot</h4>
-          <p>Upload a screenshot of your GCash or Union Bank payment confirmation for total paid (<strong id="proofTotal">₱5,290</strong>).</p>
-          <label class="file-drop" id="fileDrop" for="paymentProof">
-            <span class="file-drop-label" id="proofFileLabel">No screenshot attached yet</span>
-            <span class="file-drop-btn">Choose Screenshot</span>
-            <input type="file" id="paymentProof" name="Payment Screenshot" accept="image/*" onchange="handleProofUpload(event)">
-          </label>
-          <p class="proof-confirm" id="proofConfirmMsg" hidden>✓ Screenshot attached</p>
-        </div>
-
-        <label class="form-field" style="margin-top:18px;">
-          <span class="field-label">Full Names of All Applicants *</span>
-          <textarea id="allApplicantNames" name="Full Names of All Applicants" rows="2" placeholder="e.g. Juan Dela Cruz, Maria Dela Cruz, Jose Dela Cruz Jr." oninput="clearStep3Error()"></textarea>
-        </label>
-        <p class="field-hint">Please list the full legal name of every applicant included in this quote — adults and minors.</p>
-
-        <div class="form-grid" style="margin-top:18px;">
-          <label class="form-field">
-            <span class="field-label">Viber / WhatsApp Number *</span>
-            <input type="text" id="clientContact" name="Viber/WhatsApp Number" placeholder="0949 325 9411" oninput="clearStep3Error()">
-          </label>
-          <label class="form-field">
-            <span class="field-label">Email Address *</span>
-            <input type="email" id="clientEmail" name="email" placeholder="you@email.com" oninput="clearStep3Error()">
-          </label>
-        </div>
-
-        <div class="proof-box">
-          <h4>As a Backup, Also Message Us Your Proof</h4>
-          <p>Clicking "Continue" below will automatically email your submitted details and screenshot to our team (and to you too, if you gave your email above). As a backup in case that doesn't go through, please also send your screenshot, name, and target travel date via Viber or WhatsApp:</p>
-          <div class="proof-links">
-            <p class="proof-number">Viber: +63 949 325 9411</p>
-            <p class="proof-number">WhatsApp: +63 949 325 9411</p>
-          </div>
-        </div>
-
-        <p class="avail-note">Once your payment and booked schedule are confirmed, we'll send your confirmation via Viber/WhatsApp. Please book only 1 call slot per family / application group.</p>
-        <p class="form-error" id="step3Error" hidden></p>
-
-        <div class="modal-actions">
-          <button type="button" class="btn btn-ghost" onclick="showStep(2)">Back</button>
-          <button type="submit" id="continueBtn" class="btn">Continue to Book</button>
-        </div>
-      </form>
-    </div>
-
-    <!-- STEP 4: Book on Calendly -->
-    <div class="modal-step" id="step4" hidden>
-      <span class="eyebrow">Step 4 of 4 · Book Your Call</span>
-      <h2>You're all set!</h2>
-      <div class="proof-box">
-        <p>You may now book your strategy call with Mommy Di. This booking will be confirmed as soon as your payment is confirmed by our team. Once confirmed, our team will reach out to send the next steps so we can start preparing your US visa application.</p>
-        <p id="copyConfirmMsg" style="margin-bottom:0;">We're sending a copy of your submitted details and screenshot to our team now, and to your email too if you gave one. If you don't see a confirmation email shortly, please also message your screenshot via Viber or WhatsApp as a backup.</p>
-      </div>
-
-      <div class="modal-actions">
-        <button type="button" class="btn btn-ghost" onclick="showStep(3)">Back</button>
-        <a href="https://calendly.com/travel-igotyou/visa-assistance-1-on-1-with-mommy-di" target="_blank" rel="noopener" class="btn" onclick="closePayment()">Book Your Strategy Call</a>
+        <button type="button" class="btn" onclick="sendQuoteToChat()">Chat with Us to Confirm &amp; Pay</button>
       </div>
     </div>
   </div>
@@ -1813,7 +1639,6 @@
   var PACKAGE_LABELS = { new: 'New Application', reapp: 'Reapplication', coach: 'Coaching Only' };
   var MINOR_RATE = 3000;
   var GROUP_DISCOUNT_MIN = 3;
-  var CALENDLY_URL = 'https://calendly.com/travel-igotyou/visa-assistance-1-on-1-with-mommy-di';
 
   function peso(n) {
     return '₱' + Math.round(n).toLocaleString('en-PH');
@@ -1847,7 +1672,7 @@
   }
 
   function showStep(n) {
-    [1, 2, 3, 4].forEach(function (i) {
+    [1, 2].forEach(function (i) {
       document.getElementById('step' + i).hidden = (i !== n);
       var dot = document.getElementById('dot' + i);
       if (dot) dot.classList.toggle('step-dot-active', i <= n);
@@ -1873,14 +1698,6 @@
     }
     toggleRefusedField();
     document.getElementById('formError').hidden = true;
-    document.getElementById('paymentProof').value = '';
-    document.getElementById('proofFileLabel').textContent = 'No screenshot attached yet';
-    document.getElementById('proofConfirmMsg').hidden = true;
-    document.getElementById('fileDrop').classList.remove('has-file');
-    document.getElementById('clientContact').value = '';
-    document.getElementById('clientEmail').value = '';
-    document.getElementById('allApplicantNames').value = '';
-    clearStep3Error();
     showStep(1);
     var dialog = document.getElementById('paymentModal');
     try {
@@ -1928,7 +1745,7 @@
     var minorsTotal = minors * MINOR_RATE;
     var subtotal = adultsTotal + minorsTotal;
     var totalPeople = adults + minors;
-    var discount = totalPeople >= GROUP_DISCOUNT_MIN ? subtotal * 0.10 : 0;
+    var discount = totalPeople >= GROUP_DISCOUNT_MIN ? adultsTotal * 0.05 : 0;
     var total = subtotal - discount;
     return { svc: svc, adults: adults, minors: minors, numNew: numNew, numRefused: numRefused, newTotal: newTotal, reappTotal: reappTotal, adultsTotal: adultsTotal, minorsTotal: minorsTotal, subtotal: subtotal, discount: discount, total: total, totalPeople: totalPeople };
   }
@@ -1945,11 +1762,6 @@
     err.hidden = true;
     renderQuote();
     showStep(2);
-  }
-
-  function goToStep3() {
-    renderQuote();
-    showStep(3);
   }
 
   function renderQuote() {
@@ -2006,147 +1818,158 @@
     }
 
     document.getElementById('qTotal').textContent = peso(q.total);
-
-    document.getElementById('modalPkgName').textContent = svcLabel + ' — ' + q.totalPeople + ' applicant' + (q.totalPeople === 1 ? '' : 's');
-    document.getElementById('modalAmount').textContent = peso(q.total);
-    document.getElementById('proofTotal').textContent = peso(q.total);
   }
 
-  function handleProofUpload(event) {
-    var files = event.target.files;
-    var label = document.getElementById('proofFileLabel');
-    var confirmMsg = document.getElementById('proofConfirmMsg');
-    var drop = document.getElementById('fileDrop');
-    if (files && files.length > 0) {
-      label.textContent = files[0].name;
-      confirmMsg.hidden = false;
-      drop.classList.add('has-file');
-    } else {
-      label.textContent = 'No screenshot attached yet';
-      confirmMsg.hidden = true;
-      drop.classList.remove('has-file');
-    }
-    clearStep3Error();
-  }
-
-  function clearStep3Error() {
-    var errEl = document.getElementById('step3Error');
-    if (errEl) errEl.hidden = true;
-  }
-
-  // Validates Step 3, then lets the form's real submission go through to
-  // FormSubmit (formsubmit.co) — a free form-to-email relay that needs no
-  // backend/server of our own. A genuine browser form submission (rather
-  // than a background fetch) is what reliably includes the attached payment
-  // screenshot as a real email attachment. FormSubmit then redirects back to
-  // this site (see the "_next" hidden field) with ?booked=1, which reopens
-  // this dialog straight to the confirmation step below.
-  // NOTE: the FIRST submission ever sent to a target inbox requires a
-  // one-time "Activate Form" click from an email FormSubmit sends that inbox
-  // — already done once travel.igotyou@gmail.com receives its first email.
-  var MAX_PROOF_BYTES = 8 * 1024 * 1024; // 8MB — keep uploads well under FormSubmit's limit
-  document.getElementById('bookingForm').addEventListener('submit', function (e) {
-    var proofInput = document.getElementById('paymentProof');
-    var hasFile = proofInput.files.length > 0;
-    var fileTooBig = hasFile && proofInput.files[0].size > MAX_PROOF_BYTES;
-    var names = document.getElementById('allApplicantNames').value.trim();
-    var contact = document.getElementById('clientContact').value.trim();
-    var email = document.getElementById('clientEmail').value.trim();
-    var emailField = document.getElementById('clientEmail');
-    var errEl = document.getElementById('step3Error');
-    var missing = [];
-    if (!hasFile) missing.push('your payment screenshot');
-    if (!names) missing.push('the full names of all applicants');
-    if (!contact) missing.push('your Viber/WhatsApp number');
-    if (!email || !emailField.checkValidity()) missing.push('a valid email address');
-    if (missing.length > 0) {
-      e.preventDefault();
-      errEl.textContent = 'Please add ' + missing.join(', ') + ' before continuing.';
-      errEl.hidden = false;
-      return;
-    }
-    if (fileTooBig) {
-      e.preventDefault();
-      errEl.textContent = 'That screenshot is too large to send (over 8MB). Please attach a smaller image, or send it via Viber/WhatsApp as a backup.';
-      errEl.hidden = false;
-      return;
-    }
-    errEl.hidden = true;
-    fillHiddenBookingFields();
-    // Give clear visual feedback while the real multipart submission (which
-    // can take a few seconds on a slow connection) is in flight, so it never
-    // looks like the click did nothing.
-    var btn = document.getElementById('continueBtn');
-    btn.disabled = true;
-    btn.textContent = 'Submitting — please wait…';
-    // no preventDefault — let the browser submit the real multipart form
-  });
-
-  function fillHiddenBookingFields() {
+  // Builds the plain-text quote summary used to prefill the Messenger chat
+  // (m.me links support a "text" query param that pre-populates the message
+  // box — the client still has to tap Send, nothing is sent automatically).
+  function buildQuoteMessage() {
     var q = computeQuote();
-    var name = document.getElementById('clientName').value.trim();
+    var name = document.getElementById('clientName').value.trim() || 'there';
     var travel = document.getElementById('travelDate').value;
-    var clientEmail = document.getElementById('clientEmail').value.trim();
     var svcLabel = q.svc === 'coach' ? 'Coaching Only' : 'Full Package';
-    document.getElementById('fsSubject').value = 'New Booking Submission - ' + (name || 'Client');
-    document.getElementById('fsMainName').value = name || '—';
-    document.getElementById('fsTravelDate').value = formatDate(travel);
-    document.getElementById('fsPackage').value = svcLabel;
-    document.getElementById('fsAdults').value = q.adults;
-    document.getElementById('fsMinors').value = q.minors;
-    document.getElementById('fsRefused').value = q.numRefused;
-    document.getElementById('fsTotal').value = peso(q.total);
-    // CC the client so they also get a copy of this same email — including
-    // the attached payment screenshot — alongside travel.igotyou@gmail.com.
-    document.getElementById('fsCc').value = clientEmail;
-    document.getElementById('fsAutoresponse').value = 'Hi ' + (name || 'there') + ', this confirms Mommy Di Visa Assistance Center received your booking submission and payment screenshot. Package: ' + svcLabel + '. Total due: ' + peso(q.total) + '. We will confirm your payment and reach out via Viber/WhatsApp with next steps. This is an automatic copy for your records.';
+
+    var applicantParts = [];
+    if (q.svc === 'coach') {
+      applicantParts.push(q.adults + ' adult' + (q.adults === 1 ? '' : 's'));
+    } else {
+      if (q.numNew > 0) applicantParts.push(q.numNew + ' new adult' + (q.numNew === 1 ? '' : 's'));
+      if (q.numRefused > 0) applicantParts.push(q.numRefused + ' reapplication adult' + (q.numRefused === 1 ? '' : 's'));
+    }
+    if (q.minors > 0) applicantParts.push(q.minors + ' minor' + (q.minors === 1 ? '' : 's'));
+    var applicantsLine = applicantParts.length ? applicantParts.join(', ') : (q.adults + ' adult' + (q.adults === 1 ? '' : 's'));
+
+    var lines = [
+      "Hi! Here's my quote from Mommy Di Visa Assistance Center:",
+      '',
+      'Name: ' + name,
+      'Package: ' + svcLabel,
+      'Travel Date: ' + formatDate(travel),
+      'Applicants: ' + applicantsLine,
+      'Total Due: ' + peso(q.total),
+      '',
+      "I've also attached a screenshot of my quote. I'd like to confirm availability and proceed with payment."
+    ];
+    return lines.join('\n');
   }
 
-  // If FormSubmit just redirected back here after a successful submission,
-  // reopen the modal straight to the confirmation step.
-  (function checkBookedRedirect() {
-    if (window.location.search.indexOf('booked=1') === -1) return;
-    document.addEventListener('DOMContentLoaded', function () {
-      var dialog = document.getElementById('paymentModal');
-      try {
-        if (typeof dialog.showModal === 'function') dialog.showModal();
-        else dialog.setAttribute('open', '');
-      } catch (e) { dialog.setAttribute('open', ''); }
-      showStep(4);
-      if (window.history && window.history.replaceState) {
-        window.history.replaceState({}, document.title, window.location.pathname);
-      }
-    });
-  })();
+  // Draws the current quote onto a canvas and downloads it as a PNG, so the
+  // client has an actual quote "screenshot" ready to attach in Messenger —
+  // browsers don't allow a website to attach files to a chat automatically,
+  // so this is the closest equivalent: one auto-downloaded image, one manual
+  // attach tap.
+  function downloadQuoteImage() {
+    var q = computeQuote();
+    var name = document.getElementById('clientName').value.trim() || 'Client';
+    var travel = document.getElementById('travelDate').value;
+    var svcLabel = q.svc === 'coach' ? 'Coaching Only' : 'Full Package';
 
-  function copyText(text, btn) {
-    var original = btn.textContent;
-    function done() {
-      btn.textContent = 'Copied';
-      setTimeout(function () { btn.textContent = original; }, 1500);
+    var W = 900, H = 760;
+    var canvas = document.createElement('canvas');
+    canvas.width = W;
+    canvas.height = H;
+    var ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    ctx.fillStyle = '#FFFFFF';
+    ctx.fillRect(0, 0, W, H);
+
+    ctx.fillStyle = '#0B3265';
+    ctx.fillRect(0, 0, W, 150);
+    ctx.fillStyle = '#FFFFFF';
+    ctx.font = '700 34px Montserrat, Arial, sans-serif';
+    ctx.fillText('Mommy Di Visa Assistance Center', 40, 68);
+    ctx.font = '400 20px Arial, sans-serif';
+    ctx.fillText('US B1/B2 Tourist Visa — Your Quote', 40, 104);
+
+    var y = 200;
+    ctx.fillStyle = '#33465B';
+    ctx.font = '700 26px Montserrat, Arial, sans-serif';
+    ctx.fillText('Quote for ' + name, 40, y);
+    y += 38;
+    ctx.font = '400 20px Arial, sans-serif';
+    ctx.fillStyle = '#62758A';
+    ctx.fillText(svcLabel + ' \u00B7 Target travel date: ' + formatDate(travel), 40, y);
+    y += 46;
+
+    ctx.strokeStyle = '#DCE5ED';
+    ctx.beginPath(); ctx.moveTo(40, y); ctx.lineTo(W - 40, y); ctx.stroke();
+    y += 44;
+
+    function row(label, amount, opts) {
+      opts = opts || {};
+      ctx.font = (opts.bold ? '700 ' : '400 ') + '22px Arial, sans-serif';
+      ctx.fillStyle = opts.color || '#33465B';
+      ctx.textAlign = 'left';
+      ctx.fillText(label, 40, y);
+      ctx.textAlign = 'right';
+      ctx.fillText(amount, W - 40, y);
+      ctx.textAlign = 'left';
+      y += 42;
     }
-    function fallback() {
-      try {
-        var ta = document.createElement('textarea');
-        ta.value = text;
-        ta.style.position = 'fixed';
-        ta.style.opacity = '0';
-        document.body.appendChild(ta);
-        ta.select();
-        document.execCommand('copy');
-        document.body.removeChild(ta);
-        done();
-      } catch (e) { /* clipboard unavailable; ignore */ }
+
+    if (q.svc === 'coach') {
+      row(q.adults + ' adult' + (q.adults === 1 ? '' : 's') + ' \u00D7 ' + peso(PACKAGE_RATES.coach), peso(q.newTotal));
+    } else {
+      if (q.numNew > 0) row(q.numNew + ' adult' + (q.numNew === 1 ? '' : 's') + ', new application \u00D7 ' + peso(PACKAGE_RATES.new), peso(q.newTotal));
+      if (q.numRefused > 0) row(q.numRefused + ' adult' + (q.numRefused === 1 ? '' : 's') + ', reapplication \u00D7 ' + peso(PACKAGE_RATES.reapp), peso(q.reappTotal));
     }
-    try {
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(text).then(done).catch(fallback);
-      } else {
-        fallback();
-      }
-    } catch (e) {
-      fallback();
+    if (q.minors > 0) row(q.minors + ' minor' + (q.minors === 1 ? '' : 's') + ' below 18 \u00D7 ' + peso(MINOR_RATE), peso(q.minorsTotal));
+
+    y += 6;
+    ctx.strokeStyle = '#DCE5ED';
+    ctx.beginPath(); ctx.moveTo(40, y); ctx.lineTo(W - 40, y); ctx.stroke();
+    y += 40;
+
+    row('Subtotal', peso(q.subtotal), { bold: true });
+
+    if (q.discount > 0) {
+      row('Group discount (5%, 3+ applicants)', '\u2212' + peso(q.discount), { color: '#B51F4D' });
     }
+
+    y += 6;
+    ctx.strokeStyle = '#0B3265';
+    ctx.lineWidth = 2;
+    ctx.beginPath(); ctx.moveTo(40, y); ctx.lineTo(W - 40, y); ctx.stroke();
+    ctx.lineWidth = 1;
+    y += 48;
+
+    ctx.font = '700 30px Montserrat, Arial, sans-serif';
+    ctx.fillStyle = '#0B3265';
+    ctx.textAlign = 'left';
+    ctx.fillText('Total Due', 40, y);
+    ctx.textAlign = 'right';
+    ctx.fillText(peso(q.total), W - 40, y);
+    ctx.textAlign = 'left';
+
+    y += 60;
+    ctx.font = '400 16px Arial, sans-serif';
+    ctx.fillStyle = '#62758A';
+    var stamp = new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+    ctx.fillText('Generated ' + stamp + ' \u00B7 Rates subject to confirmation upon booking.', 40, y);
+
+    canvas.toBlob(function (blob) {
+      if (!blob) return;
+      var url = URL.createObjectURL(blob);
+      var a = document.createElement('a');
+      var safeName = name.replace(/[^a-z0-9]+/gi, '-').toLowerCase().replace(/^-+|-+$/g, '') || 'client';
+      a.href = url;
+      a.download = 'mommy-di-quote-' + safeName + '.png';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      setTimeout(function () { URL.revokeObjectURL(url); }, 4000);
+    }, 'image/png');
+  }
+
+  // Opens Messenger (with the quote prefilled as text) and downloads the
+  // quote image in the same click, then closes the modal.
+  function sendQuoteToChat() {
+    var message = buildQuoteMessage();
+    var chatUrl = 'https://m.me/61573767958529?text=' + encodeURIComponent(message);
+    window.open(chatUrl, '_blank', 'noopener');
+    downloadQuoteImage();
+    closePayment();
   }
 
 
