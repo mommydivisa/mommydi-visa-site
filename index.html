@@ -592,7 +592,7 @@
     color:var(--ink-soft);
     letter-spacing:.04em;
   }
-  .price-card ul{
+  .price-card ul.pkg-checklist{
     margin:0; padding-left:0;
     list-style:none;
     display:flex;
@@ -601,8 +601,8 @@
     font-size:0.92rem;
     color:var(--ink);
   }
-  .price-card ul li{display:flex; align-items:flex-start; gap:10px;}
-  .price-card ul li::before{
+  .price-card ul.pkg-checklist li{display:flex; align-items:flex-start; gap:10px;}
+  .price-card ul.pkg-checklist li::before{
     content:"✓";
     flex:none;
     width:18px; height:18px;
@@ -615,6 +615,88 @@
     text-align:center;
     margin-top:2px;
   }
+  .pkg-desc{
+    margin:0;
+    font-size:0.92rem;
+    color:var(--ink-soft);
+    line-height:1.5;
+  }
+  .pkg-desc strong{color:var(--accent);}
+  .pkg-tagline{
+    margin:0;
+    font-size:0.86rem;
+    font-style:italic;
+    color:var(--ink-soft);
+  }
+  .pkg-recommend{
+    background:var(--surface-2);
+    border-radius:10px;
+    padding:14px 16px;
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+  }
+  .pkg-recommend-label{
+    font-family:'Montserrat',sans-serif; font-weight:600;
+    font-size:0.72rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--primary);
+  }
+  .pkg-recommend-list{
+    margin:0; padding-left:0;
+    list-style:none;
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+    font-size:0.86rem;
+    color:var(--ink);
+  }
+  .pkg-recommend-list li{display:flex; align-items:flex-start; gap:8px;}
+  .pkg-recommend-icon{flex:none;}
+  .addons-block{margin-top:28px;}
+  .addons-title{
+    font-family:'Montserrat',sans-serif;
+    font-size:1.1rem;
+    font-weight:700;
+    color:var(--primary);
+    margin:0 0 14px;
+  }
+  .addons-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
+    gap:16px;
+  }
+  .addon-card{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:14px;
+    padding:18px 20px;
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+  }
+  .addon-card p{margin:0; font-size:0.88rem; color:var(--ink);}
+  .addon-head{
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-bottom:2px;
+  }
+  .addon-icon{font-size:1.1rem;}
+  .addon-name{
+    font-family:'Montserrat',sans-serif; font-weight:600;
+    font-size:0.95rem;
+    color:var(--primary);
+    flex:1;
+  }
+  .addon-price{
+    font-family:'Montserrat',sans-serif; font-weight:700;
+    font-size:0.95rem;
+    color:var(--accent);
+  }
+  .addon-note{font-size:0.8rem; color:var(--ink-soft); font-style:italic;}
   .price-card .btn{
     text-transform:uppercase;
     letter-spacing:.03em;
@@ -1281,76 +1363,119 @@
   <section id="pricing">
     <div class="section-head">
       <span class="eyebrow">Rates</span>
-      <h2>Our Packages</h2>
-      <p>End-to-end support for your application — priced per applicant, well below typical travel-agency assistance fees.</p>
+      <h2>🇺🇸 US Visa Assistance Packages by Mommy Di</h2>
+      <p>From coaching for DIY applicants to full application assistance with personal guidance, choose the package that suits your needs.</p>
     </div>
 
     <div class="price-grid">
-      <div class="price-card featured">
-        <span class="badge">Most booked</span>
+      <div class="price-card" id="pkg-a">
         <div class="price-card-head">
-          <span class="pkg-label">Package 1</span>
-          <span class="pkg-sub">For New Applications</span>
+          <span class="pkg-label">⭐ Package A</span>
+          <span class="pkg-sub">One-on-One Personal Coaching with Mommy Di</span>
         </div>
         <div class="price-card-body">
-          <div><span class="amount">₱5,290</span></div>
-          <div class="unit">PER APPLICANT · NEVER BEEN REFUSED</div>
-          <ul>
-            <li>Application assessment</li>
-            <li>DS-160 assistance and review</li>
-            <li>Interview scheduling guidance</li>
-            <li>1-on-1 mock interview with script</li>
-            <li>Ongoing consultation until your interview</li>
+          <div><span class="amount">₱5,790</span></div>
+          <div class="unit">PER APPLICANT · MOST COMPLETE PACKAGE</div>
+          <p class="pkg-desc">Our most complete package — with one-on-one discussion with Mommy Di. <strong>Limited slots available!</strong></p>
+          <p class="pkg-desc">Mommy Di will personally discuss with you how to best prepare and write your DS-160, what to say during your interview, and how to present your circumstances clearly and confidently.</p>
+          <ul class="pkg-checklist">
+            <li>Everything included in Package B</li>
+            <li>Detailed discussion with Mommy Di on how to best prepare and write your DS-160</li>
+            <li>Guidance from Mommy Di on what to say during your visa interview</li>
+            <li>Personalized interview strategy based on your profile, concerns, and circumstances</li>
+            <li>Mock interview conducted by Mommy Di a few days before your scheduled interview</li>
+            <li>Practice answering questions with Mommy Di and receive personalized feedback</li>
+            <li>Personalized interview guide and suggested answers</li>
+            <li>Dedicated senior consultant and ongoing group chat support with Mommy Di</li>
           </ul>
-          <button type="button" class="btn btn-block" onclick="openPayment('new')">Get Started</button>
+          <div class="pkg-recommend">
+            <span class="pkg-recommend-label">Recommended for:</span>
+            <ul class="pkg-recommend-list">
+              <li><span class="pkg-recommend-icon">🎤</span> Applicants who want direct guidance and personalized interview practice with Mommy Di</li>
+              <li><span class="pkg-recommend-icon">🧩</span> Applicants with previous refusals or employment, travel, or family circumstances that would benefit from a detailed discussion</li>
+            </ul>
+          </div>
+          <p class="pkg-tagline">Prepare with a clear application strategy, a well-prepared DS-160, and personalized coaching from Mommy Di.</p>
+          <button type="button" class="btn btn-block" onclick="openPayment('a')">Get Started</button>
         </div>
       </div>
 
-      <div class="price-card">
+      <div class="price-card featured" id="pkg-b">
+        <span class="badge">Most Popular</span>
         <div class="price-card-head">
-          <span class="pkg-label">Package 2</span>
-          <span class="pkg-sub">For Reapplications</span>
+          <span class="pkg-label">💼 Package B</span>
+          <span class="pkg-sub">Smart All-In</span>
         </div>
         <div class="price-card-body">
-          <div><span class="amount">₱5,690</span></div>
-          <div class="unit">PER APPLICANT · PREVIOUSLY REFUSED</div>
-          <ul>
-            <li>Everything in New Application</li>
-            <li>Review of your previous application</li>
-            <li>Assessment of likely refusal reasons</li>
-            <li>Rebuilt strategy for your next attempt</li>
-            <li>Ongoing consultation until your interview</li>
+          <div><span class="amount">₱4,790</span></div>
+          <div class="unit">PER APPLICANT · FULL ASSISTANCE</div>
+          <p class="pkg-desc">Full application assistance led by Mommy Di's senior consultant, with Mommy Di's personal review and guidance.</p>
+          <p class="pkg-desc">Mommy Di's senior consultant manages your case and serves as your main point of contact. Mommy Di remains in your group chat throughout the process, reviews your DS-160 and applicant profile, and provides guidance on your interview strategy. The senior consultant works in consultation with Mommy Di at every stage.</p>
+          <ul class="pkg-checklist">
+            <li>DS-160 preparation by our team, with Mommy Di's review</li>
+            <li>US visa appointment scheduling</li>
+            <li>Dedicated senior consultant to coordinate your application and answer your questions</li>
+            <li>Group chat support with Mommy Di throughout the process</li>
+            <li>Review of your profile and guidance on your interview strategy</li>
+            <li>Personalized interview guide and suggested answers based on your actual circumstances</li>
+            <li>Mock interview session with our senior consultant to practice your answers and receive feedback</li>
           </ul>
-          <button type="button" class="btn btn-block" onclick="openPayment('reapp')">Get Started</button>
+          <button type="button" class="btn btn-block" onclick="openPayment('b')">Get Started</button>
         </div>
       </div>
 
-      <div class="price-card">
+      <div class="price-card" id="pkg-c">
         <div class="price-card-head">
-          <span class="pkg-label">Coaching</span>
-          <span class="pkg-sub">For DIY Applicants</span>
+          <span class="pkg-label">📝 Package C</span>
+          <span class="pkg-sub">Coaching Only</span>
         </div>
         <div class="price-card-body">
           <div><span class="amount">₱3,500</span></div>
-          <div class="unit">DIY APPLICANTS · NO AGENCY</div>
-          <ul>
-            <li>One-on-one strategy call with Mommy Di</li>
-            <li>Review of your own DS-160</li>
-            <li>Flags on parts that need editing</li>
-            <li>One-on-one mock interview, incl. common embassy questions</li>
+          <div class="unit">PER APPLICANT · DIY APPLICANTS</div>
+          <p class="pkg-desc">For applicants who prefer to handle their own application.</p>
+          <p class="pkg-desc">You prepare your DS-160 and book your appointment. Mommy Di helps you review your application and prepare for your interview.</p>
+          <ul class="pkg-checklist">
+            <li>DS-160 review by Mommy Di</li>
+            <li>Guidance on what to revise before submitting</li>
+            <li>Mock interview with Mommy Di</li>
+            <li>Personalized interview guidance based on your circumstances</li>
           </ul>
-          <p class="coaching-note">"I will make my own DS-160 and schedule my own interview. I just need help with reviewing my DS-160 and with the mock interview."</p>
-          <button type="button" class="btn btn-block" onclick="openPayment('coach')">Get Started</button>
+          <p class="pkg-tagline">Understand what needs improvement and practice explaining your circumstances clearly and confidently.</p>
+          <button type="button" class="btn btn-block" onclick="openPayment('c')">Get Started</button>
         </div>
       </div>
     </div>
 
-    <p class="price-note" style="margin-top:20px;">Coaching Only is for applicants who prepared (or are preparing) their own application and are not currently working with a travel agency. Rates are per applicant — groups of 3 or more get 5% off the adult rate, and applicants below 18 are a flat ₱3,000 each with no additional discount. Get an exact quote when you book.</p>
+    <p class="price-note" style="margin-top:20px;">Rates are per applicant — groups of 3 or more get 5% off the adult rate, and applicants below 18 are a flat ₱3,000 each with no additional discount. Get an exact quote when you book.</p>
+
+    <div class="addons-block">
+      <h3 class="addons-title">➕ Add-Ons</h3>
+      <div class="addons-grid">
+        <div class="addon-card">
+          <div class="addon-head">
+            <span class="addon-icon">⚡</span>
+            <span class="addon-name">Rush Application</span>
+            <span class="addon-price">+₱1,000</span>
+          </div>
+          <p>Hoping to attend your interview within the next month? We'll prioritize your DS-160 preparation and appointment scheduling assistance.</p>
+          <p class="addon-note">Interview dates depend on available embassy slots. Rush service prioritizes our processing but does not guarantee an interview within one month or on a specific date.</p>
+        </div>
+        <div class="addon-card">
+          <div class="addon-head">
+            <span class="addon-icon">🔄</span>
+            <span class="addon-name">Duplicate Account Resolution</span>
+            <span class="addon-price">+₱450</span>
+          </div>
+          <p>Having trouble with an existing or duplicate US visa scheduling account? We'll assist with the account resolution request and coordinate with the appropriate support team.</p>
+          <p class="addon-note">Resolution may take several weeks. Please tell us upfront if you have previously applied or created a scheduling account.</p>
+        </div>
+      </div>
+    </div>
 
     <div class="other-costs">
       <div style="flex:1; min-width:220px;">
         <h4>Paid to Mommy Di</h4>
-        <div class="cost-line"><span>Assistance fee</span><span class="mono">₱5,290 – ₱5,690</span></div>
+        <div class="cost-line"><span>Assistance fee</span><span class="mono">₱3,500 – ₱5,790</span></div>
       </div>
       <div style="flex:1; min-width:220px;">
         <h4>Paid to Other Parties</h4>
@@ -1369,7 +1494,7 @@
     <div class="steps">
       <div class="step">
         <div class="step-num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><circle cx="12" cy="12" r="9"/><path d="M9 8h4a2 2 0 1 1 0 4H9m0 0h4a2 2 0 1 1 0 4H9M9 8v8"/></svg></div>
-        <div><span class="step-eyebrow">Step 1</span><h3>Reserve your slot</h3><p>Get your quote and message us to confirm your slot and lock in your booking — this covers your DS-160 preparation, scheduling account setup, biometrics and interview scheduling, document collation, script writing, and one mock interview.</p><p class="slot-note"><span class="slot-next"><!-- PROCESS_AVAILABILITY:START (auto-updated hourly — do not hand-edit) -->Next opening: Tue, Dec 1, 2026 — 3:00 PM (Manila time)<!-- PROCESS_AVAILABILITY:END --></span> &middot; <a href="#" class="slot-live-link" onclick="openPayment('new'); return false;">Reserve now &rarr;</a></p></div>
+        <div><span class="step-eyebrow">Step 1</span><h3>Reserve your slot</h3><p>Get your quote and message us to confirm your slot and lock in your booking — this covers your DS-160 preparation, scheduling account setup, biometrics and interview scheduling, document collation, script writing, and one mock interview.</p><p class="slot-note"><span class="slot-next"><!-- PROCESS_AVAILABILITY:START (auto-updated hourly — do not hand-edit) -->Next opening: Thu, Nov 5, 2026 — 3:00 PM (Manila time)<!-- PROCESS_AVAILABILITY:END --></span> &middot; <a href="#" class="slot-live-link" onclick="openPayment('a'); return false;">Reserve now &rarr;</a></p></div>
       </div>
       <div class="step-flow"><span class="step-flow-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M12 5v14M6 13l6 6 6-6"/></svg></span></div>
       <div class="step">
@@ -1530,12 +1655,12 @@
       <p class="modal-sub">Tell us a bit about your application so we can prepare your quotation.</p>
 
       <div class="q-block">
-        <span class="field-label">Which service do you need?</span>
-        <div class="pkg-picker" role="radiogroup" aria-label="Choose your service">
-          <label class="pkg-pill"><input type="radio" name="svc" value="full" checked onchange="toggleRefusedField()"> Full Package (DS-160 + Strategy + Mock Interview)</label>
-          <label class="pkg-pill"><input type="radio" name="svc" value="coach" onchange="toggleRefusedField()"> Coaching Only (DS-160 Review + Mock Interview)</label>
+        <span class="field-label">Which package do you need?</span>
+        <div class="pkg-picker" role="radiogroup" aria-label="Choose your package">
+          <label class="pkg-pill"><input type="radio" name="svc" value="a" checked> Package A — One-on-One Personal Coaching (₱5,790)</label>
+          <label class="pkg-pill"><input type="radio" name="svc" value="b"> Package B — Smart All-In (₱4,790)</label>
+          <label class="pkg-pill"><input type="radio" name="svc" value="c"> Package C — Coaching Only (₱3,500)</label>
         </div>
-        <p class="coaching-note" id="coachNote" hidden>"I will make my own DS-160 and schedule my own interview. I just need help with reviewing my DS-160 and with the mock interview."</p>
       </div>
 
       <div class="form-grid">
@@ -1549,15 +1674,11 @@
         </label>
         <label class="form-field">
           <span class="field-label">Adult Applicants</span>
-          <input type="number" id="numAdults" min="1" value="1" onchange="clampRefusedField()">
+          <input type="number" id="numAdults" min="1" value="1">
         </label>
         <label class="form-field">
           <span class="field-label">Minors Below 18</span>
           <input type="number" id="numMinors" min="0" value="0">
-        </label>
-        <label class="form-field" id="refusedField">
-          <span class="field-label">Of those adults, how many have been refused before?</span>
-          <input type="number" id="numRefused" min="0" value="0" onchange="clampRefusedField()">
         </label>
       </div>
       <p class="form-error" id="formError" hidden>Please enter your name, target travel date, and at least 1 adult applicant.</p>
@@ -1578,10 +1699,6 @@
         <div class="quote-line" id="qAdultsNewRow">
           <span id="qAdultsNewLine">1 adult × ₱5,290</span>
           <span id="qAdultsNewAmount" class="mono">₱5,290</span>
-        </div>
-        <div class="quote-line" id="qAdultsReappRow" hidden>
-          <span id="qAdultsReappLine">0 adults (reapplication) × ₱5,690</span>
-          <span id="qAdultsReappAmount" class="mono">₱0</span>
         </div>
         <div class="quote-line" id="qMinorsRow" hidden>
           <span id="qMinorsLine">0 minors × ₱3,000</span>
@@ -1606,11 +1723,11 @@
         <p>Based on her live Calendly calendar, her next open times are:</p>
         <!-- AVAILABILITY:START (auto-updated hourly by .github/workflows/update-availability.yml — do not hand-edit) -->
         <ul>
-          <li><strong>Tue, Dec 1, 2026</strong> — 3:00 PM &amp; 5:00 PM (Manila time)</li>
-          <li><strong>Wed, Dec 2, 2026</strong> — 3:00 PM &amp; 5:00 PM (Manila time)</li>
-          <li><strong>Thu, Dec 3, 2026</strong> — 2:00 PM &amp; 3:00 PM &amp; 5:00 PM (Manila time)</li>
+          <li><strong>Thu, Nov 5, 2026</strong> — 3:00 PM (Manila time)</li>
+          <li><strong>Fri, Nov 6, 2026</strong> — 2:00 PM &amp; 3:00 PM (Manila time)</li>
+          <li><strong>Mon, Nov 9, 2026</strong> — 2:00 PM &amp; 5:00 PM (Manila time)</li>
         </ul>
-        <p class="avail-note">Snapshot of Mommy Di's calendar as of Oct 14, 2026, 3:06 PM (Manila time) — slots are limited and fill on a first-paid, first-booked basis, so more openings may appear closer to your date. You'll pick your exact day and time on Calendly once your payment is confirmed.</p>
+        <p class="avail-note">Snapshot of Mommy Di's calendar as of Sep 14, 2026, 3:40 PM (Manila time) — slots are limited and fill on a first-paid, first-booked basis, so more openings may appear closer to your date. You'll pick your exact day and time on Calendly once your payment is confirmed.</p>
         <!-- AVAILABILITY:END -->
       </div>
 
@@ -1644,8 +1761,8 @@
     });
   });
 
-  var PACKAGE_RATES = { new: 5290, reapp: 5690, coach: 3500 };
-  var PACKAGE_LABELS = { new: 'New Application', reapp: 'Reapplication', coach: 'Coaching Only' };
+  var PACKAGE_RATES = { a: 5790, b: 4790, c: 3500 };
+  var PACKAGE_LABELS = { a: 'Package A — One-on-One Personal Coaching', b: 'Package B — Smart All-In', c: 'Package C — Coaching Only' };
   var MINOR_RATE = 3000;
   var GROUP_DISCOUNT_MIN = 3;
 
@@ -1665,19 +1782,7 @@
 
   function getSelectedSvc() {
     var svcChecked = document.querySelector('input[name="svc"]:checked');
-    return svcChecked ? svcChecked.value : 'full';
-  }
-
-  function toggleRefusedField() {
-    var isCoach = (getSelectedSvc() === 'coach');
-    document.getElementById('coachNote').hidden = !isCoach;
-  }
-
-  function clampRefusedField() {
-    var adults = Math.max(1, parseInt(document.getElementById('numAdults').value, 10) || 0);
-    var refusedInput = document.getElementById('numRefused');
-    var refused = Math.max(0, parseInt(refusedInput.value, 10) || 0);
-    if (refused > adults) refusedInput.value = adults;
+    return svcChecked ? svcChecked.value : 'a';
   }
 
   function showStep(n) {
@@ -1689,23 +1794,12 @@
   }
 
   function openPayment(pkg) {
-    var svcFull = document.querySelector('input[name="svc"][value="full"]');
-    var svcCoach = document.querySelector('input[name="svc"][value="coach"]');
+    var svcInput = document.querySelector('input[name="svc"][value="' + pkg + '"]');
     document.getElementById('clientName').value = '';
     document.getElementById('travelDate').value = '';
     document.getElementById('numAdults').value = '1';
     document.getElementById('numMinors').value = '0';
-    if (pkg === 'coach') {
-      svcCoach.checked = true;
-      document.getElementById('numRefused').value = '0';
-    } else if (pkg === 'reapp') {
-      svcFull.checked = true;
-      document.getElementById('numRefused').value = '1';
-    } else {
-      svcFull.checked = true;
-      document.getElementById('numRefused').value = '0';
-    }
-    toggleRefusedField();
+    if (svcInput) svcInput.checked = true;
     document.getElementById('formError').hidden = true;
     showStep(1);
     var dialog = document.getElementById('paymentModal');
@@ -1737,26 +1831,14 @@
     var svc = getSelectedSvc();
     var adults = Math.max(1, parseInt(document.getElementById('numAdults').value, 10) || 0);
     var minors = Math.max(0, parseInt(document.getElementById('numMinors').value, 10) || 0);
-    var refusedInput = Math.max(0, parseInt(document.getElementById('numRefused').value, 10) || 0);
-    var numRefused = svc === 'coach' ? 0 : Math.min(refusedInput, adults);
-    var numNew = adults - numRefused;
 
-    var newTotal, reappTotal, adultsTotal;
-    if (svc === 'coach') {
-      newTotal = adults * PACKAGE_RATES.coach;
-      reappTotal = 0;
-      adultsTotal = newTotal;
-    } else {
-      newTotal = numNew * PACKAGE_RATES.new;
-      reappTotal = numRefused * PACKAGE_RATES.reapp;
-      adultsTotal = newTotal + reappTotal;
-    }
+    var adultsTotal = adults * PACKAGE_RATES[svc];
     var minorsTotal = minors * MINOR_RATE;
     var subtotal = adultsTotal + minorsTotal;
     var totalPeople = adults + minors;
     var discount = totalPeople >= GROUP_DISCOUNT_MIN ? adultsTotal * 0.05 : 0;
     var total = subtotal - discount;
-    return { svc: svc, adults: adults, minors: minors, numNew: numNew, numRefused: numRefused, newTotal: newTotal, reappTotal: reappTotal, adultsTotal: adultsTotal, minorsTotal: minorsTotal, subtotal: subtotal, discount: discount, total: total, totalPeople: totalPeople };
+    return { svc: svc, adults: adults, minors: minors, adultsTotal: adultsTotal, minorsTotal: minorsTotal, subtotal: subtotal, discount: discount, total: total, totalPeople: totalPeople };
   }
 
   function goToStep2() {
@@ -1777,35 +1859,15 @@
     var q = computeQuote();
     var name = document.getElementById('clientName').value.trim();
     var travel = document.getElementById('travelDate').value;
-    var svcLabel = q.svc === 'coach' ? 'Coaching Only' : 'Full Package';
+    var svcLabel = PACKAGE_LABELS[q.svc];
 
     document.getElementById('qClientName').textContent = name || 'there';
     document.getElementById('qPkgName').textContent = svcLabel;
     document.getElementById('qTravelDate').textContent = formatDate(travel);
 
-    var newRow = document.getElementById('qAdultsNewRow');
-    var reappRow = document.getElementById('qAdultsReappRow');
-    if (q.svc === 'coach') {
-      newRow.hidden = false;
-      document.getElementById('qAdultsNewLine').textContent = q.adults + ' adult' + (q.adults === 1 ? '' : 's') + ' × ' + peso(PACKAGE_RATES.coach);
-      document.getElementById('qAdultsNewAmount').textContent = peso(q.newTotal);
-      reappRow.hidden = true;
-    } else {
-      if (q.numNew > 0) {
-        newRow.hidden = false;
-        document.getElementById('qAdultsNewLine').textContent = q.numNew + ' adult' + (q.numNew === 1 ? '' : 's') + ', new application × ' + peso(PACKAGE_RATES.new);
-        document.getElementById('qAdultsNewAmount').textContent = peso(q.newTotal);
-      } else {
-        newRow.hidden = true;
-      }
-      if (q.numRefused > 0) {
-        reappRow.hidden = false;
-        document.getElementById('qAdultsReappLine').textContent = q.numRefused + ' adult' + (q.numRefused === 1 ? '' : 's') + ', reapplication × ' + peso(PACKAGE_RATES.reapp);
-        document.getElementById('qAdultsReappAmount').textContent = peso(q.reappTotal);
-      } else {
-        reappRow.hidden = true;
-      }
-    }
+    document.getElementById('qAdultsNewRow').hidden = false;
+    document.getElementById('qAdultsNewLine').textContent = q.adults + ' adult' + (q.adults === 1 ? '' : 's') + ' × ' + peso(PACKAGE_RATES[q.svc]);
+    document.getElementById('qAdultsNewAmount').textContent = peso(q.adultsTotal);
 
     var minorsRow = document.getElementById('qMinorsRow');
     if (q.minors > 0) {
@@ -1836,17 +1898,11 @@
     var q = computeQuote();
     var name = document.getElementById('clientName').value.trim() || 'there';
     var travel = document.getElementById('travelDate').value;
-    var svcLabel = q.svc === 'coach' ? 'Coaching Only' : 'Full Package';
+    var svcLabel = PACKAGE_LABELS[q.svc];
 
-    var applicantParts = [];
-    if (q.svc === 'coach') {
-      applicantParts.push(q.adults + ' adult' + (q.adults === 1 ? '' : 's'));
-    } else {
-      if (q.numNew > 0) applicantParts.push(q.numNew + ' new adult' + (q.numNew === 1 ? '' : 's'));
-      if (q.numRefused > 0) applicantParts.push(q.numRefused + ' reapplication adult' + (q.numRefused === 1 ? '' : 's'));
-    }
+    var applicantParts = [q.adults + ' adult' + (q.adults === 1 ? '' : 's')];
     if (q.minors > 0) applicantParts.push(q.minors + ' minor' + (q.minors === 1 ? '' : 's'));
-    var applicantsLine = applicantParts.length ? applicantParts.join(', ') : (q.adults + ' adult' + (q.adults === 1 ? '' : 's'));
+    var applicantsLine = applicantParts.join(', ');
 
     var lines = [
       "Hi! Here's my quote from Mommy Di Visa Assistance Center:",
@@ -1871,7 +1927,7 @@
     var q = computeQuote();
     var name = document.getElementById('clientName').value.trim() || 'Client';
     var travel = document.getElementById('travelDate').value;
-    var svcLabel = q.svc === 'coach' ? 'Coaching Only' : 'Full Package';
+    var svcLabel = PACKAGE_LABELS[q.svc];
 
     var W = 900, H = 760;
     var canvas = document.createElement('canvas');
@@ -1898,7 +1954,7 @@
     y += 38;
     ctx.font = '400 20px Arial, sans-serif';
     ctx.fillStyle = '#62758A';
-    ctx.fillText(svcLabel + ' \u00B7 Target travel date: ' + formatDate(travel), 40, y);
+    ctx.fillText(svcLabel + ' · Target travel date: ' + formatDate(travel), 40, y);
     y += 46;
 
     ctx.strokeStyle = '#DCE5ED';
@@ -1917,13 +1973,8 @@
       y += 42;
     }
 
-    if (q.svc === 'coach') {
-      row(q.adults + ' adult' + (q.adults === 1 ? '' : 's') + ' \u00D7 ' + peso(PACKAGE_RATES.coach), peso(q.newTotal));
-    } else {
-      if (q.numNew > 0) row(q.numNew + ' adult' + (q.numNew === 1 ? '' : 's') + ', new application \u00D7 ' + peso(PACKAGE_RATES.new), peso(q.newTotal));
-      if (q.numRefused > 0) row(q.numRefused + ' adult' + (q.numRefused === 1 ? '' : 's') + ', reapplication \u00D7 ' + peso(PACKAGE_RATES.reapp), peso(q.reappTotal));
-    }
-    if (q.minors > 0) row(q.minors + ' minor' + (q.minors === 1 ? '' : 's') + ' below 18 \u00D7 ' + peso(MINOR_RATE), peso(q.minorsTotal));
+    row(q.adults + ' adult' + (q.adults === 1 ? '' : 's') + ' × ' + peso(PACKAGE_RATES[q.svc]), peso(q.adultsTotal));
+    if (q.minors > 0) row(q.minors + ' minor' + (q.minors === 1 ? '' : 's') + ' below 18 × ' + peso(MINOR_RATE), peso(q.minorsTotal));
 
     y += 6;
     ctx.strokeStyle = '#DCE5ED';
@@ -1933,7 +1984,7 @@
     row('Subtotal', peso(q.subtotal), { bold: true });
 
     if (q.discount > 0) {
-      row('Group discount (5%, 3+ applicants)', '\u2212' + peso(q.discount), { color: '#B51F4D' });
+      row('Group discount (5%, 3+ applicants)', '−' + peso(q.discount), { color: '#B51F4D' });
     }
 
     y += 6;
@@ -1955,7 +2006,7 @@
     ctx.font = '400 16px Arial, sans-serif';
     ctx.fillStyle = '#62758A';
     var stamp = new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
-    ctx.fillText('Generated ' + stamp + ' \u00B7 Rates subject to confirmation upon booking.', 40, y);
+    ctx.fillText('Generated ' + stamp + ' · Rates subject to confirmation upon booking.', 40, y);
 
     canvas.toBlob(function (blob) {
       if (!blob) return;
